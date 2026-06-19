@@ -853,16 +853,17 @@ button {
 
 .sample-download-action {
     grid-template-columns: minmax(0, 1fr);
-    justify-self: start;
-    align-self: start;
+    grid-column: 1 / -1;
+    justify-self: center;
+    align-self: center;
     align-content: center;
-    justify-items: start;
-    gap: 14px;
+    justify-items: center;
+    gap: 12px;
     width: 66.666%;
     min-width: 0;
     min-height: 0;
-    aspect-ratio: 8 / 3;
-    padding: 18px 22px;
+    aspect-ratio: 8 / 2.15;
+    padding: 18px 24px;
     border-radius: 28px;
     border: 1px solid rgba(166, 94, 42, 0.28);
     text-decoration: none;
@@ -900,19 +901,22 @@ button {
 
 .sample-download-content {
     display: grid;
-    gap: 6px;
+    gap: 4px;
+    justify-items: center;
+    text-align: center;
 }
 
 .sample-download-label {
     font-family: var(--display-font);
-    font-size: clamp(22px, 2.3vw, 30px);
-    line-height: 1.08;
+    font-size: clamp(15px, 1.75vw, 20px);
+    line-height: 1.04;
     color: #fffdf9;
+    max-width: 10ch;
 }
 
 .sample-download-meta {
     color: rgba(255, 248, 242, 0.82);
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
