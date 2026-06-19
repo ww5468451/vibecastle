@@ -851,36 +851,63 @@ button {
 }
 
 .sample-download-action {
+    grid-template-columns: minmax(0, 1fr);
     align-content: center;
-    gap: 8px;
-    min-height: 100%;
-    padding: 28px;
-    border-radius: calc(var(--radius-lg) - 4px);
-    border: 1px solid rgba(58, 47, 35, 0.10);
+    justify-items: start;
+    gap: 14px;
+    width: min(66.666%, 360px);
+    min-width: 280px;
+    min-height: clamp(132px, 25%, 172px);
+    padding: 24px 26px;
+    border-radius: 28px;
+    border: 1px solid rgba(166, 94, 42, 0.28);
     text-decoration: none;
-    background:
-        linear-gradient(rgba(69, 57, 42, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(69, 57, 42, 0.05) 1px, transparent 1px),
-        linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(247, 239, 227, 0.86)),
-        var(--bg-soft);
-    background-size: 28px 28px, 28px 28px, 100% 100%, auto;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    color: #fffdf9;
+    background: linear-gradient(135deg, #d87437 0%, #c85e23 100%);
+    box-shadow: 0 22px 44px rgba(179, 95, 40, 0.24);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 .sample-download-action:hover {
     transform: translateY(-2px);
-    border-color: var(--line-strong);
-    box-shadow: 0 20px 44px rgba(42, 35, 28, 0.10);
+    box-shadow: 0 28px 52px rgba(179, 95, 40, 0.3);
+    filter: saturate(1.06);
+}
+
+.sample-download-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: rgba(255, 253, 249, 0.18);
+    border: 1px solid rgba(255, 253, 249, 0.22);
+}
+
+.sample-download-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.sample-download-content {
+    display: grid;
+    gap: 6px;
 }
 
 .sample-download-label {
     font-family: var(--display-font);
-    font-size: clamp(24px, 2.4vw, 30px);
+    font-size: clamp(22px, 2.3vw, 30px);
     line-height: 1.08;
+    color: #fffdf9;
 }
 
 .sample-download-meta {
-    color: var(--muted);
+    color: rgba(255, 248, 242, 0.82);
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -971,6 +998,10 @@ button {
 
     .display-title {
         max-width: none;
+    }
+
+    .sample-download-action {
+        width: 100%;
     }
 }
 
