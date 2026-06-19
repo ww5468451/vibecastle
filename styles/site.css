@@ -853,13 +853,16 @@ button {
 
 .sample-download-action {
     grid-template-columns: minmax(0, 1fr);
+    justify-self: start;
+    align-self: start;
     align-content: center;
     justify-items: start;
     gap: 14px;
-    width: min(66.666%, 360px);
-    min-width: 280px;
-    min-height: clamp(132px, 25%, 172px);
-    padding: 24px 26px;
+    width: 66.666%;
+    min-width: 0;
+    min-height: 0;
+    aspect-ratio: 8 / 3;
+    padding: 18px 22px;
     border-radius: 28px;
     border: 1px solid rgba(166, 94, 42, 0.28);
     text-decoration: none;
@@ -1003,6 +1006,8 @@ button {
 
     .sample-download-action {
         width: 100%;
+        aspect-ratio: auto;
+        min-height: 132px;
     }
 }
 
