@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欧洲卫浴数据看板 | WW.WIKI</title>
+    <link rel="stylesheet" href="/styles/site.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="logo" href="/index.html">WW.WIKI</a>
+        <div class="nav-links">
+            <a href="/index.html">首页</a>
+            <a class="active" href="/projects.html">项目与洞察</a>
+            <a href="/thoughts.html">思考与生活</a>
+            <a href="/about.html">关于我</a>
+        </div>
+    </nav>
+
+    <main class="site-shell project-shell">
+        <section class="project-hero">
+            <article class="panel content-card project-hero-main">
+                <p class="kicker">Case study / Data visualization</p>
+                <h1 class="article-title">欧洲卫浴数据看板：把五国站点与新品机会变成可读的分析面板</h1>
+                <p class="lead">这类项目最能体现“数据分析”能力：不是简单抄表，而是把多国家站点、多个品类和新品情况压缩成一个能让团队快速看懂的可视化结构。对业务来说，这种看板比长篇报告更适合做阶段性判断和优先级决策。</p>
+                <div class="chip-row">
+                    <span class="chip">Dashboard Thinking</span>
+                    <span class="chip">Category Analytics</span>
+                    <span class="chip">EU Amazon</span>
+                    <span class="chip">Visualization</span>
+                </div>
+                <div class="metric-grid">
+                    <article class="metric-card"><p class="metric-label">覆盖站点</p><strong class="metric-value">5</strong><p class="metric-note">德国、英国、法国、西班牙、意大利。</p></article>
+                    <article class="metric-card"><p class="metric-label">1-4月总销售额</p><strong class="metric-value">€137.5M</strong><p class="metric-note">五国卫浴市场合计规模，足够支撑站点优先级判断。</p></article>
+                    <article class="metric-card"><p class="metric-label">新品数</p><strong class="metric-value">977</strong><p class="metric-note">新品占比约 5%，说明市场对新品并非完全封闭。</p></article>
+                    <article class="metric-card"><p class="metric-label">最大站点</p><strong class="metric-value">Germany</strong><p class="metric-note">市场最大，单 SKU 产值最高，品牌集中度约 38%。</p></article>
+                </div>
+            </article>
+
+            <aside class="panel-inset sidebar-card project-hero-side">
+                <p class="eyebrow">Project Snapshot</p>
+                <ul class="project-meta-list">
+                    <li><span>研究对象</span><strong>欧洲亚马逊卫浴市场动态</strong></li>
+                    <li><span>分析维度</span><p>站点规模、新品占比、国家差异、品类机会、产品开发提示。</p></li>
+                    <li><span>交付形式</span><p>适合业务和产品共用的数据看板，而不是只给分析岗自己看的原始表。</p></li>
+                    <li><span>能力证明</span><p>体现我具备把 Excel 复杂信息转成“业务可读界面”的能力。</p></li>
+                </ul>
+            </aside>
+        </section>
+
+        <section class="viz-card" data-viz-deck>
+            <div class="section-head">
+                <p class="kicker">Interactive View</p>
+                <h2 class="section-title">先看国家，再看新品，再看品类优先级。</h2>
+            </div>
+            <div class="viz-toolbar">
+                <button class="viz-toggle active" type="button" data-viz-button="country">国家对比</button>
+                <button class="viz-toggle" type="button" data-viz-button="new">新品结构</button>
+                <button class="viz-toggle" type="button" data-viz-button="category">品类优先</button>
+            </div>
+
+            <section class="viz-panel active" data-viz-panel="country">
+                <p class="viz-caption">欧洲站不能一概而论。德国是最大市场，英国次之，法国、西班牙、意大利明显更小。</p>
+                <div class="bar-list">
+                    <div class="bar-row"><div class="bar-meta"><span>德国</span><span>€57.3M</span></div><div class="bar-track"><span class="bar-fill" data-width="100" style="--bar-color:#1b1713;"></span></div></div>
+                    <div class="bar-row"><div class="bar-meta"><span>英国</span><span>€36.4M</span></div><div class="bar-track"><span class="bar-fill" data-width="64" style="--bar-color:#5f554c;"></span></div></div>
+                    <div class="bar-row"><div class="bar-meta"><span>法国</span><span>€18.4M</span></div><div class="bar-track"><span class="bar-fill" data-width="32" style="--bar-color:#877a6e;"></span></div></div>
+                    <div class="bar-row"><div class="bar-meta"><span>西班牙</span><span>€14.7M</span></div><div class="bar-track"><span class="bar-fill" data-width="26" style="--bar-color:#b3a594;"></span></div></div>
+                    <div class="bar-row"><div class="bar-meta"><span>意大利</span><span>€10.6M</span></div><div class="bar-track"><span class="bar-fill" data-width="18" style="--bar-color:#d6c9b8;"></span></div></div>
+                </div>
+            </section>
+
+            <section class="viz-panel" data-viz-panel="new">
+                <p class="viz-caption">新品数量占比本身就是市场友好度信号。不是新品越多越好，而是要看新品能不能起量。</p>
+                <div class="signal-grid">
+                    <article class="signal-card"><p class="caption-line">德国</p><h3 class="card-title">新品 362 个，占比 5.7%</h3><p>新品友好度较高，且单 SKU 产值更优，值得优先观察。</p></article>
+                    <article class="signal-card"><p class="caption-line">英国</p><h3 class="card-title">新品 271 个，占比 5.6%</h3><p>与德国接近，但均价更低，适合观察爆款花洒路径。</p></article>
+                    <article class="signal-card"><p class="caption-line">法国 / 西班牙 / 意大利</p><h3 class="card-title">新品占比逐步下降</h3><p>体量较小，更适合在主站点跑通后做延展，而不是优先切入。</p></article>
+                    <article class="signal-card"><p class="caption-line">总体</p><h3 class="card-title">新品数 977，占比约 5.0%</h3><p>说明欧洲站对新品并不封闭，但依然需要明确站点与品类顺序。</p></article>
+                </div>
+            </section>
+
+            <section class="viz-panel" data-viz-panel="category">
+                <p class="viz-caption">当我把国家看完后，会立刻收束到“优先做什么品类”。因为只有品类层面清楚了，开发和供应链才能接得上。</p>
+                <div class="bar-list">
+                    <div class="bar-row"><div class="bar-meta"><span>德国厨房龙头</span><span>€16.1M</span></div><div class="bar-track"><span class="bar-fill" data-width="100" style="--bar-color:#1b1713;"></span></div></div>
+                    <div class="bar-row"><div class="bar-meta"><span>德国手持花洒</span><span>€10.8M</span></div><div class="bar-track"><span class="bar-fill" data-width="67" style="--bar-color:#5f554c;"></span></div></div>
+                    <div class="bar-row"><div class="bar-meta"><span>德国淋浴系统</span><span>€10.7M</span></div><div class="bar-track"><span class="bar-fill" data-width="66" style="--bar-color:#877a6e;"></span></div></div>
+                    <div class="bar-row"><div class="bar-meta"><span>德国面盆龙头</span><span>€9.3M</span></div><div class="bar-track"><span class="bar-fill" data-width="58" style="--bar-color:#b3a594;"></span></div></div>
+                </div>
+                <p class="mini-note">对业务侧来说，这类可视化最重要的作用是把“应该优先做德国厨房龙头与花洒”这样的判断快速讲明白。</p>
+            </section>
+        </section>
+
+        <div class="case-link-row">
+            <a class="link-inline" href="/projects.html">← 返回项目列表</a>
+            <span class="mini-note">资料来源参考：20260608 AMZ-EU 卫浴市场调研工作簿。</span>
+        </div>
+    </main>
+
+    <script src="/scripts/project-visuals.js"></script>
+</body>
+</html>
