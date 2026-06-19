@@ -168,7 +168,10 @@ button {
 .project-meta-list,
 .detail-list,
 .visual-stack,
-.dashboard-detail {
+.dashboard-detail,
+.report-gallery,
+.report-figure,
+.report-figure-stack {
     display: grid;
 }
 
@@ -821,6 +824,36 @@ button {
     gap: 18px;
 }
 
+.report-gallery,
+.report-figure-stack {
+    gap: 18px;
+}
+
+.report-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.report-figure {
+    gap: 12px;
+    padding: 18px;
+    border-radius: calc(var(--radius-lg) - 4px);
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.66);
+}
+
+.report-figure img {
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid rgba(58, 47, 35, 0.08);
+    box-shadow: 0 18px 42px rgba(34, 27, 21, 0.08);
+}
+
+.report-figure figcaption {
+    color: var(--accent-soft);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
 .sidebar-card .section-title,
 .project-hero-side .section-title {
     font-size: clamp(24px, 2.3vw, 34px);
@@ -871,6 +904,7 @@ button {
     .signal-grid,
     .story-grid,
     .dashboard-grid,
+    .report-gallery,
     .detail-grid,
     .metric-grid {
         grid-template-columns: 1fr;
