@@ -1,4 +1,4 @@
-# WW.WIKI / Vibecastle
+﻿# WW.WIKI / Vibecastle
 
 WW.WIKI 是一个面向市场分析、消费者洞察、数据分析与项目推进能力展示的个人品牌站。  
 这个版本已经从“静态作品陈列”升级为“可维护的作品集工程”，包含统一视觉系统、项目案例页、真实博客归档，以及可交互的数据可视化组件。
@@ -135,3 +135,4 @@ git push
 git checkout -b your-branch-name
 git push -u origin your-branch-name
 ```
+
