@@ -48,6 +48,27 @@
             </aside>
         </section>
 
+        <section class="dashboard-card">
+            <div class="section-head">
+                <p class="kicker">Interactive Dashboard</p>
+                <h2 class="section-title">把国家选择放进一张进入地图里，而不是分别看三份报告。</h2>
+                <p class="chart-caption">横轴看市场成熟度，纵轴看增长动能，圆点大小代表当前生意体量。点击任一国家，右侧会同步更新进入建议。</p>
+            </div>
+            <div class="dashboard-grid">
+                <div class="chart-shell" data-chart="matrix" data-source="country-entry-map"></div>
+                <section class="dashboard-detail is-empty" data-chart-detail="country-entry-map">
+                    <p class="detail-kicker">Selected market</p>
+                    <h3 class="detail-title">点击图中的国家</h3>
+                    <p class="detail-copy">这里会显示对应市场的进入摘要、平台策略和执行风险。</p>
+                </section>
+            </div>
+            <div class="chart-legend">
+                <span class="legend-item"><span class="legend-swatch" style="background:#1f1914;"></span>优先观察</span>
+                <span class="legend-item"><span class="legend-swatch" style="background:#8a5a3c;"></span>高增长但高难度</span>
+                <span class="legend-item"><span class="legend-swatch" style="background:#bea287;"></span>成熟大市场</span>
+            </div>
+        </section>
+
         <section class="viz-card" data-viz-deck>
             <div class="section-head">
                 <p class="kicker">Interactive View</p>
@@ -96,6 +117,79 @@
         </div>
     </main>
 
+    <script type="application/json" id="country-entry-map">
+        {
+            "title": "国家进入地图",
+            "xLabel": "市场成熟度",
+            "yLabel": "增长动能",
+            "sizeLabel": "市场体量",
+            "detailKicker": "Entry recommendation",
+            "xRange": [0, 100],
+            "yRange": [0, 100],
+            "quadrants": [
+                { "label": "高增长试探区", "x": 162, "y": 74 },
+                { "label": "优先进入区", "x": 600, "y": 74 },
+                { "label": "规模未成熟区", "x": 156, "y": 196 },
+                { "label": "成熟稳健区", "x": 604, "y": 196 }
+            ],
+            "series": [
+                {
+                    "label": "泰国",
+                    "shortLabel": "TH",
+                    "x": 58,
+                    "y": 74,
+                    "xLabel": "社交电商结构清晰，但品类成熟度中等",
+                    "yLabel": "直播与内容电商增速快",
+                    "sizeLabel": "$26B",
+                    "size": 24,
+                    "color": "#1f1914",
+                    "summary": "适合做内容驱动型试水市场。进入逻辑不是先做最大盘，而是先利用 TikTok 与 Lazada 的内容转化能力，验证高传播型品类能否快速起量。",
+                    "meta": {
+                        "GMV": "$26B",
+                        "平台优先": "TikTok > Lazada",
+                        "关键条件": "内容与达人协同",
+                        "建议动作": "小步快跑试水"
+                    }
+                },
+                {
+                    "label": "墨西哥",
+                    "shortLabel": "MX",
+                    "x": 46,
+                    "y": 88,
+                    "xLabel": "平台格局集中，但履约成熟度不足",
+                    "yLabel": "增速极高，需求扩张强",
+                    "sizeLabel": "$59B",
+                    "size": 32,
+                    "color": "#8a5a3c",
+                    "summary": "墨西哥更像高增长高波动市场。判断关键不在需求，而在物流、尾程和售后体系是否能跟上，否则高增长会直接放大差评风险。",
+                    "meta": {
+                        "GMV": "$59B",
+                        "平台优先": "Mercado Libre / Amazon",
+                        "关键条件": "物流与尾程",
+                        "建议动作": "先评估履约能力"
+                    }
+                },
+                {
+                    "label": "英国",
+                    "shortLabel": "UK",
+                    "x": 84,
+                    "y": 62,
+                    "xLabel": "成熟市场，平台和用户结构清晰",
+                    "yLabel": "增速稳健而非爆发",
+                    "sizeLabel": "$152.6B",
+                    "size": 44,
+                    "color": "#bea287",
+                    "summary": "英国不是试错型市场，而是纪律型市场。它适合已有供应链与站点运营能力的团队做有节奏的进入，并围绕 Amazon 先做重点品类突破。",
+                    "meta": {
+                        "GMV": "$152.6B",
+                        "平台优先": "Amazon > eBay",
+                        "关键条件": "成熟品牌化运营",
+                        "建议动作": "稳态切入主平台"
+                    }
+                }
+            ]
+        }
+    </script>
     <script src="/scripts/project-visuals.js"></script>
 </body>
 </html>

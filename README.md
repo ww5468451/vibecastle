@@ -1,77 +1,137 @@
-# WW.WIKI
+# WW.WIKI / Vibecastle
 
-WW.WIKI 是一个个人品牌站，定位是市场分析、用户洞察、项目推进和真实写作的组合展示。
+WW.WIKI 是一个面向市场分析、消费者洞察、数据分析与项目推进能力展示的个人品牌站。  
+这个版本已经从“静态作品陈列”升级为“可维护的作品集工程”，包含统一视觉系统、项目案例页、真实博客归档，以及可交互的数据可视化组件。
+
+## 当前版本特点
+
+- 全站统一视觉：
+  - 网格背景
+  - 毛玻璃导航栏
+  - 统一圆角、间距、按钮与卡片系统
+  - `Plus Jakarta Sans` + `Noto Serif SC` 字体体系
+- 四大主导航模块：
+  - `/index.html`
+  - `/projects.html`
+  - `/thoughts.html`
+  - `/about.html`
+- 项目案例页支持两层交互：
+  - tab 切换内容面板
+  - 自定义交互看板（matrix / rank）
+- 博客与项目结构分离，适合长期维护
 
 ## 目录结构
 
 ```text
-/index.html                  首页
-/about.html                  关于我
-/projects.html               项目与洞察列表
-/thoughts.html               博客列表
-/2026/                       真实博客文章
-/archive/                    项目案例详情
-/templates/                  新增内容模板
-/styles/site.css             全站统一样式
+/index.html                         首页
+/projects.html                      项目与洞察列表
+/thoughts.html                      思考与生活列表
+/about.html                         关于我
+/2026/                              博客文章归档
+/archive/                           项目案例详情页
+/styles/site.css                    全站统一样式
+/scripts/project-visuals.js         全站项目交互与图表脚本
+/templates/blog-post-template.html  新文章模板
+/templates/project-case-template.html 新项目模板
 ```
 
-## 设计规则
+## 如何本地预览
 
-- 全站统一使用同一套网格背景、毛玻璃卡片、导航栏、按钮与间距系统。
-- 字体体系统一为 `Manrope` + `Noto Serif SC`。
-- 全站鼠标样式已经写进 `styles/site.css`，不需要额外脚本。
-- 新页面要继续复用 `styles/site.css`，不要在单页里重新发散一套样式。
+在项目根目录运行一个静态服务即可。Windows 下可用：
 
-## 新增博客文章
+```bash
+python -m http.server 4174
+```
 
-1. 复制 `templates/blog-post-template.html` 到 `2026/` 目录。
-2. 修改这几个位置：
+然后打开：
+
+```text
+http://127.0.0.1:4174/index.html
+```
+
+## 如何新增博客文章
+
+1. 复制 `templates/blog-post-template.html`
+2. 放到 `2026/` 目录
+3. 修改以下位置：
    - `<title>`
-   - `<p class="kicker">`
-   - `<h1 class="article-title">`
-   - `<p class="meta-line">`
-   - `<div class="rich-text">`
-3. 在 `thoughts.html` 和首页 `index.html` 里补上链接。
+   - `.kicker`
+   - `.article-title`
+   - `.meta-line`
+   - `.rich-text`
+4. 再到 `thoughts.html` 和 `index.html` 增加入口
 
-推荐文件名：
+推荐命名：
 
 ```text
 /2026/日期+标题.html
 ```
 
-## 新增项目案例
+## 如何新增项目案例
 
-1. 复制 `templates/project-case-template.html` 到 `archive/` 目录。
-2. 修改这几个位置：
-   - `<title>`
-   - `<p class="kicker">`
-   - `<h1 class="article-title">`
-   - `<p class="lead">`
-   - `<div class="chip-row">`
-   - `<div class="rich-text">`
-3. 在 `projects.html` 和首页 `index.html` 里补上链接。
+1. 复制 `templates/project-case-template.html`
+2. 放到 `archive/` 目录
+3. 修改以下内容：
+   - 项目标题与摘要
+   - Hero 区指标卡
+   - `Project Snapshot`
+   - `Interactive Dashboard`
+   - `Interactive View`
+   - 底部 JSON 数据源
+4. 再到 `projects.html` 和 `index.html` 增加入口
 
-推荐文件名：
+推荐命名：
 
 ```text
-/archive/slug.html
+/archive/project-your-slug.html
 ```
 
-## 目录结构能不能改
+## 可视化组件怎么维护
 
-可以改，而且现在已经按更合理的方式整理好了：
+项目页的动态图表逻辑在：
 
-- 博客文章放在 `/2026/`
-- 项目案例放在 `/archive/`
+```text
+/scripts/project-visuals.js
+```
 
-这样不会导致跳转异常，只要内部链接继续使用站内根路径或相对路径即可。
+当前支持两类：
 
-## 如何提交
+- `data-chart="matrix"`
+  - 用于国家选择、赛道判断、优先级矩阵
+- `data-chart="rank"`
+  - 用于品类排名、市场规模排序、优先级排序
+
+图表数据不是写死在 JS 里，而是放在页面底部的：
+
+```html
+<script type="application/json" id="your-chart-id">
+```
+
+这样后续新增项目时，不需要改 JS 逻辑，只需要新增 JSON 数据即可。
+
+## 长期维护建议
+
+- 样式只维护 `styles/site.css`，不要在单页内散写 `<style>`
+- 项目交互只维护 `scripts/project-visuals.js`
+- 新项目优先复用模板，不要重新发明一套结构
+- 每次新增页面后，至少检查：
+  - 导航是否一致
+  - 跳转是否正常
+  - 是否继续引用 `/styles/site.css`
+  - 是否继续引用 `/scripts/project-visuals.js`
+
+## Git 基本流程
 
 ```bash
+git status
 git add .
-git commit -m "Update content and templates"
+git commit -m "Describe your update"
 git push
 ```
 
-如果你已经在 `brand-polish-homepage` 分支上，直接 `git push` 就会上传当前版本。
+如果需要新开分支：
+
+```bash
+git checkout -b your-branch-name
+git push -u origin your-branch-name
+```

@@ -76,6 +76,22 @@
             </aside>
         </section>
 
+        <section class="dashboard-card">
+            <div class="section-head">
+                <p class="kicker">Interactive Dashboard</p>
+                <h2 class="section-title">把 VOC 从“抱怨合集”升级成优先级矩阵。</h2>
+                <p class="chart-caption">横轴是团队修复难度，纵轴是用户影响强度，圆点大小代表该问题在原声材料中的出现频率。点击任一痛点，查看它为什么值得优先处理。</p>
+            </div>
+            <div class="dashboard-grid">
+                <div class="chart-shell" data-chart="matrix" data-source="voc-priority-map"></div>
+                <section class="dashboard-detail is-empty" data-chart-detail="voc-priority-map">
+                    <p class="detail-kicker">Selected issue</p>
+                    <h3 class="detail-title">点击图中的痛点</h3>
+                    <p class="detail-copy">这里会显示该问题的业务影响与建议动作。</p>
+                </section>
+            </div>
+        </section>
+
         <section class="viz-card" data-viz-deck>
             <div class="section-head">
                 <p class="kicker">Interactive View</p>
@@ -222,6 +238,93 @@
         </div>
     </main>
 
+    <script type="application/json" id="voc-priority-map">
+        {
+            "title": "VOC 优先级矩阵",
+            "xLabel": "修复难度",
+            "yLabel": "用户影响强度",
+            "sizeLabel": "反馈频次",
+            "detailKicker": "Priority takeaway",
+            "xRange": [0, 100],
+            "yRange": [0, 100],
+            "quadrants": [
+                { "label": "低成本高回报", "x": 166, "y": 74 },
+                { "label": "高影响重点项", "x": 608, "y": 74 },
+                { "label": "低优先级", "x": 174, "y": 206 },
+                { "label": "中长期项", "x": 604, "y": 206 }
+            ],
+            "series": [
+                {
+                    "label": "电池续航与寿命",
+                    "shortLabel": "续航",
+                    "x": 72,
+                    "y": 92,
+                    "xLabel": "修复难度较高",
+                    "yLabel": "对购买和满意度影响最大",
+                    "sizeLabel": "高频抱怨",
+                    "size": 34,
+                    "color": "#1f1914",
+                    "summary": "续航不是普通功能偏好，而是决定购买与退货的核心变量。它说明产品定义阶段必须优先明确电池寿命、充电周期和真实里程口径。",
+                    "meta": {
+                        "优先级": "最高",
+                        "牵涉团队": "研发 / 供应链 / 客服",
+                        "建议动作": "定义真实续航能力"
+                    }
+                },
+                {
+                    "label": "组装难易度",
+                    "shortLabel": "组装",
+                    "x": 34,
+                    "y": 78,
+                    "xLabel": "修复难度较低",
+                    "yLabel": "高频影响首评与售后体验",
+                    "sizeLabel": "高频反馈",
+                    "size": 28,
+                    "color": "#6b5440",
+                    "summary": "组装问题非常适合优先优化，因为它对首评、差评和退货体验影响大，但修复成本通常比硬件升级更低。",
+                    "meta": {
+                        "优先级": "高",
+                        "牵涉团队": "说明书 / 包装 / 客服",
+                        "建议动作": "先做低成本优化"
+                    }
+                },
+                {
+                    "label": "舒适度与骑行体验",
+                    "shortLabel": "舒适",
+                    "x": 58,
+                    "y": 74,
+                    "xLabel": "中等难度",
+                    "yLabel": "直接影响口碑与复购",
+                    "sizeLabel": "中高频",
+                    "size": 24,
+                    "color": "#a78468",
+                    "summary": "舒适度更像品牌口碑变量。它未必像续航那样直接决定首单，但会显著影响内容评价和长期满意度。",
+                    "meta": {
+                        "优先级": "中高",
+                        "牵涉团队": "产品 / 内容",
+                        "建议动作": "围绕场景打磨体验"
+                    }
+                },
+                {
+                    "label": "价格与性价比",
+                    "shortLabel": "价格",
+                    "x": 28,
+                    "y": 70,
+                    "xLabel": "较低难度",
+                    "yLabel": "影响平台转化",
+                    "sizeLabel": "平台高频讨论",
+                    "size": 22,
+                    "color": "#cfb397",
+                    "summary": "价格不是单独的便宜与否，而是平台用户如何理解“值不值”。这要求产品、文案和配件策略一起匹配性价比认知。",
+                    "meta": {
+                        "优先级": "高",
+                        "牵涉团队": "产品 / 运营 / 定价",
+                        "建议动作": "统一性价比表达"
+                    }
+                }
+            ]
+        }
+    </script>
     <script src="/scripts/project-visuals.js"></script>
 </body>
 </html>

@@ -64,6 +64,22 @@
             </aside>
         </section>
 
+        <section class="dashboard-card">
+            <div class="section-head">
+                <p class="kicker">Interactive Dashboard</p>
+                <h2 class="section-title">辅助出行市场不是看谁卖得多，而是看谁更值得现在进入。</h2>
+                <p class="chart-caption">横轴是进入友好度，纵轴是市场容量，圆点大小代表客单价水平。点击任一品类查看切入含义。</p>
+            </div>
+            <div class="dashboard-grid">
+                <div class="chart-shell" data-chart="matrix" data-source="senior-mobility-map"></div>
+                <section class="dashboard-detail is-empty" data-chart-detail="senior-mobility-map">
+                    <p class="detail-kicker">Selected segment</p>
+                    <h3 class="detail-title">点击图中的品类</h3>
+                    <p class="detail-copy">这里会显示该赛道的规模、门槛与进入建议。</p>
+                </section>
+            </div>
+        </section>
+
         <section class="viz-card" data-viz-deck>
             <div class="section-head">
                 <p class="kicker">Interactive View</p>
@@ -117,6 +133,79 @@
         </div>
     </main>
 
+    <script type="application/json" id="senior-mobility-map">
+        {
+            "title": "辅助出行赛道地图",
+            "xLabel": "进入友好度",
+            "yLabel": "市场容量",
+            "sizeLabel": "客单价",
+            "detailKicker": "Segment recommendation",
+            "xRange": [0, 100],
+            "yRange": [0, 100],
+            "quadrants": [
+                { "label": "高门槛高机会", "x": 180, "y": 74 },
+                { "label": "优先进入区", "x": 602, "y": 74 },
+                { "label": "小众高门槛", "x": 174, "y": 204 },
+                { "label": "轻量机会区", "x": 596, "y": 204 }
+            ],
+            "series": [
+                {
+                    "label": "电动三轮车",
+                    "shortLabel": "Trike",
+                    "x": 61,
+                    "y": 38,
+                    "xLabel": "进入友好度中等",
+                    "yLabel": "容量偏小",
+                    "sizeLabel": "$1105",
+                    "size": 30,
+                    "color": "#7d6550",
+                    "summary": "电动三轮车更像高客单、小容量赛道，适合差异化卖点明确、内容能力较强的团队切入，而不是作为普适主赛道。",
+                    "meta": {
+                        "月销量": "4124",
+                        "均价": "$1105",
+                        "品牌集中度": "82.9",
+                        "建议动作": "谨慎试探"
+                    }
+                },
+                {
+                    "label": "四轮代步车",
+                    "shortLabel": "Scooter",
+                    "x": 82,
+                    "y": 58,
+                    "xLabel": "进入友好度最高",
+                    "yLabel": "容量中高",
+                    "sizeLabel": "$725",
+                    "size": 24,
+                    "color": "#1f1914",
+                    "summary": "四轮代步车是当前最均衡的机会赛道：容量足够、集中度低、价格也相对友好，更适合作为辅助出行方向的优先布局对象。",
+                    "meta": {
+                        "月销量": "6368",
+                        "均价": "$725",
+                        "竞争结构": "低集中度",
+                        "建议动作": "优先观察切入"
+                    }
+                },
+                {
+                    "label": "电动轮椅",
+                    "shortLabel": "Wheelchair",
+                    "x": 52,
+                    "y": 92,
+                    "xLabel": "进入门槛高",
+                    "yLabel": "容量最大",
+                    "sizeLabel": "$1101",
+                    "size": 36,
+                    "color": "#be9e84",
+                    "summary": "电动轮椅有最大容量和高客单价，但监管、售后与产品复杂度也最高。它适合有更强产品和服务基础的团队，而不适合轻装试错。",
+                    "meta": {
+                        "月销量": "13189",
+                        "均价": "$1101",
+                        "产品复杂度": "91",
+                        "建议动作": "能力成熟后再进"
+                    }
+                }
+            ]
+        }
+    </script>
     <script src="/scripts/project-visuals.js"></script>
 </body>
 </html>

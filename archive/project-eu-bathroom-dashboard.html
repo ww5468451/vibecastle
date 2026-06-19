@@ -48,6 +48,43 @@
             </aside>
         </section>
 
+        <section class="dashboard-card">
+            <div class="section-head">
+                <p class="kicker">Interactive Dashboard</p>
+                <h2 class="section-title">五国站点不是线性排序，而是“规模、价格、竞争结构”共同作用的结果。</h2>
+                <p class="chart-caption">点击任一国家气泡，查看它在欧洲卫浴市场中的角色定位与优先级建议。</p>
+            </div>
+            <div class="dashboard-grid">
+                <div class="chart-shell" data-chart="matrix" data-source="eu-market-map"></div>
+                <section class="dashboard-detail is-empty" data-chart-detail="eu-market-map">
+                    <p class="detail-kicker">Selected market</p>
+                    <h3 class="detail-title">点击图中的国家</h3>
+                    <p class="detail-copy">这里会显示该国家的规模、均价与进入优先建议。</p>
+                </section>
+            </div>
+            <div class="chart-legend">
+                <span class="legend-item"><span class="legend-swatch" style="background:#1f1914;"></span>核心主站点</span>
+                <span class="legend-item"><span class="legend-swatch" style="background:#7d6550;"></span>次主站点</span>
+                <span class="legend-item"><span class="legend-swatch" style="background:#b99878;"></span>后续延展站点</span>
+            </div>
+        </section>
+
+        <section class="dashboard-card">
+            <div class="section-head">
+                <p class="kicker">Category Lens</p>
+                <h2 class="section-title">把判断继续收束到类目层，才是真正能让开发和供应链接住的部分。</h2>
+                <p class="chart-caption">这组排名不是单纯展示销售额，而是明确告诉团队：德国厨房龙头和花洒是应该先看的机会。</p>
+            </div>
+            <div class="dashboard-grid">
+                <div class="chart-shell" data-chart="rank" data-source="eu-category-rank"></div>
+                <section class="dashboard-detail is-empty" data-chart-detail="eu-category-rank">
+                    <p class="detail-kicker">Selected category</p>
+                    <h3 class="detail-title">点击任一品类</h3>
+                    <p class="detail-copy">这里会显示该类目的市场含义与优先建议。</p>
+                </section>
+            </div>
+        </section>
+
         <section class="viz-card" data-viz-deck>
             <div class="section-head">
                 <p class="kicker">Interactive View</p>
@@ -98,6 +135,168 @@
         </div>
     </main>
 
+    <script type="application/json" id="eu-market-map">
+        {
+            "title": "欧洲卫浴国家对比",
+            "xLabel": "平均价格水平",
+            "yLabel": "市场规模",
+            "sizeLabel": "站点体量",
+            "detailKicker": "Market priority",
+            "xRange": [20, 50],
+            "yRange": [0, 65],
+            "quadrants": [
+                { "label": "高价低量", "x": 172, "y": 72 },
+                { "label": "高价高量", "x": 606, "y": 72 },
+                { "label": "低价低量", "x": 168, "y": 206 },
+                { "label": "低价高量", "x": 602, "y": 206 }
+            ],
+            "series": [
+                {
+                    "label": "德国",
+                    "shortLabel": "DE",
+                    "x": 43.2,
+                    "y": 57.3,
+                    "xLabel": "均价 €43.2",
+                    "yLabel": "销售额 €57.3M",
+                    "sizeLabel": "6395 个父体",
+                    "size": 42,
+                    "color": "#1f1914",
+                    "summary": "德国是这组数据里最值得优先盯住的主站点：体量最大、均价更高、类目表现清晰，也更容易让优先品类跑出明确结果。",
+                    "meta": {
+                        "销售额": "€57.3M",
+                        "均价": "€43.2",
+                        "新品率": "5.7%",
+                        "建议动作": "优先深做德国"
+                    }
+                },
+                {
+                    "label": "英国",
+                    "shortLabel": "UK",
+                    "x": 36.3,
+                    "y": 36.4,
+                    "xLabel": "均价 €36.3",
+                    "yLabel": "销售额 €36.4M",
+                    "sizeLabel": "次主站点",
+                    "size": 34,
+                    "color": "#7d6550",
+                    "summary": "英国是典型的第二优先站点：规模明显，仅次于德国，但价格更低，适合围绕高转化的基础卫浴品类走量。",
+                    "meta": {
+                        "销售额": "€36.4M",
+                        "均价": "€36.3",
+                        "新品率": "5.6%",
+                        "建议动作": "做次主站点承接"
+                    }
+                },
+                {
+                    "label": "法国",
+                    "shortLabel": "FR",
+                    "x": 34.7,
+                    "y": 18.4,
+                    "xLabel": "均价中低",
+                    "yLabel": "销售额 €18.4M",
+                    "sizeLabel": "延展市场",
+                    "size": 24,
+                    "color": "#b99878",
+                    "summary": "法国市场具备存在感，但不适合作为第一优先站点，更适合在德国和英国跑通后作为延展布局。",
+                    "meta": {
+                        "销售额": "€18.4M",
+                        "定位": "延展市场",
+                        "建议动作": "主站点验证后复制"
+                    }
+                },
+                {
+                    "label": "西班牙",
+                    "shortLabel": "ES",
+                    "x": 28.6,
+                    "y": 14.7,
+                    "xLabel": "价格更低",
+                    "yLabel": "销售额 €14.7M",
+                    "sizeLabel": "小体量",
+                    "size": 20,
+                    "color": "#d3b89d",
+                    "summary": "西班牙更适合后置观察。规模和价格都相对有限，更适合作为成熟站点扩展，而非第一波投入对象。",
+                    "meta": {
+                        "销售额": "€14.7M",
+                        "定位": "后置拓展",
+                        "建议动作": "延后进入"
+                    }
+                },
+                {
+                    "label": "意大利",
+                    "shortLabel": "IT",
+                    "x": 31.4,
+                    "y": 10.6,
+                    "xLabel": "价格中低",
+                    "yLabel": "销售额 €10.6M",
+                    "sizeLabel": "小体量",
+                    "size": 18,
+                    "color": "#e0cfc0",
+                    "summary": "意大利体量最小，更适合作为复制型站点，而不是用来承担主市场验证任务。",
+                    "meta": {
+                        "销售额": "€10.6M",
+                        "定位": "复制站点",
+                        "建议动作": "最后一批进入"
+                    }
+                }
+            ]
+        }
+    </script>
+    <script type="application/json" id="eu-category-rank">
+        {
+            "detailKicker": "Category priority",
+            "valueLabel": "品类销售额",
+            "items": [
+                {
+                    "label": "德国厨房龙头",
+                    "value": 16.1,
+                    "display": "€16.1M",
+                    "color": "#1f1914",
+                    "summary": "这是德国站最值得优先观察的主类目，既有足够规模，也更接近家庭装修和功能升级的高决策链路。",
+                    "meta": {
+                        "站点": "德国",
+                        "优先级": "最高",
+                        "建议动作": "作为主攻入口"
+                    }
+                },
+                {
+                    "label": "德国手持花洒",
+                    "value": 10.8,
+                    "display": "€10.8M",
+                    "color": "#7d6550",
+                    "summary": "花洒类目更适合做效率型突破，决策门槛和履约复杂度都相对更低，适合第二优先切入。",
+                    "meta": {
+                        "站点": "德国",
+                        "优先级": "高",
+                        "建议动作": "做效率型爆品"
+                    }
+                },
+                {
+                    "label": "德国淋浴系统",
+                    "value": 10.7,
+                    "display": "€10.7M",
+                    "color": "#a68467",
+                    "summary": "淋浴系统体量足够，但对供应链、安装说明与售后支持的要求更高，更适合在基础品类跑通后切入。",
+                    "meta": {
+                        "站点": "德国",
+                        "优先级": "中高",
+                        "建议动作": "供应链成熟后进入"
+                    }
+                },
+                {
+                    "label": "德国面盆龙头",
+                    "value": 9.3,
+                    "display": "€9.3M",
+                    "color": "#cfb398",
+                    "summary": "面盆龙头属于稳定承接类目，适合在主攻品类建立站点能力后继续扩充矩阵。",
+                    "meta": {
+                        "站点": "德国",
+                        "优先级": "中",
+                        "建议动作": "作为矩阵补充"
+                    }
+                }
+            ]
+        }
+    </script>
     <script src="/scripts/project-visuals.js"></script>
 </body>
 </html>
