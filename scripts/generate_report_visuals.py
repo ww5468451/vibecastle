@@ -21,9 +21,11 @@ ACCENT_3 = "#c8aa8c"
 
 def font(size: int, bold: bool = False):
     candidates = [
-        "C:/Windows/Fonts/plusjakartasans-bold.ttf" if bold else "C:/Windows/Fonts/plusjakartasans.ttf",
-        "C:/Windows/Fonts/arialbd.ttf" if bold else "C:/Windows/Fonts/arial.ttf",
         "C:/Windows/Fonts/msyhbd.ttc" if bold else "C:/Windows/Fonts/msyh.ttc",
+        "C:/Windows/Fonts/SourceHanSansSC-Bold.otf" if bold else "C:/Windows/Fonts/SourceHanSansSC-Medium.otf",
+        "C:/Windows/Fonts/SourceHanSansSC-Bold.ttf" if bold else "C:/Windows/Fonts/SourceHanSansSC-Medium.ttf",
+        "C:/Windows/Fonts/simhei.ttf" if bold else "C:/Windows/Fonts/simsun.ttc",
+        "C:/Windows/Fonts/arialbd.ttf" if bold else "C:/Windows/Fonts/arial.ttf",
     ]
     for path in candidates:
         try:
@@ -42,10 +44,10 @@ FONT_LABEL = font(20, True)
 
 
 def draw_wrapped(draw, text, xy, width, font_obj, fill, line_gap=10):
-    words = list(text)
+    chars = list(text)
     lines = []
     current = ""
-    for ch in words:
+    for ch in chars:
         test = current + ch
         if draw.textlength(test, font=font_obj) <= width:
             current = test
@@ -108,7 +110,8 @@ def bubble(draw, x, y, r, color, label, caption):
     draw.ellipse((x - r, y - r, x + r, y + r), fill=color, outline=PANEL, width=4)
     tw = draw.textlength(label, font=FONT_BODY_BOLD)
     draw.text((x - tw / 2, y - 18), label, font=FONT_BODY_BOLD, fill="#fffdf9")
-    draw.text((x - draw.textlength(caption, font=FONT_LABEL) / 2, y + r + 14), caption, font=FONT_LABEL, fill=MUTED)
+    cw = draw.textlength(caption, font=FONT_LABEL)
+    draw.text((x - cw / 2, y + r + 14), caption, font=FONT_LABEL, fill=MUTED)
 
 
 def create_voc():
@@ -149,8 +152,8 @@ def create_eu():
     draw.line((170, 430, 170, 796), fill=LINE, width=2)
     draw.line((170, 610, 710, 610), fill="#eadfce", width=2)
     draw.line((440, 430, 440, 796), fill="#eadfce", width=2)
-    bubble(draw, 594, 490, 78, ACCENT, "DE", "€57.3M / 高价高量")
-    bubble(draw, 510, 602, 58, ACCENT_2, "UK", "€36.4M / 次主站点")
+    bubble(draw, 594, 490, 78, ACCENT, "DE", "€7.3M / 高价高量")
+    bubble(draw, 510, 602, 58, ACCENT_2, "UK", "€6.4M / 次主站点")
     bubble(draw, 350, 668, 42, ACCENT_3, "FR", "延展市场")
     bubble(draw, 286, 726, 34, "#d3b89d", "ES", "后置进入")
     bubble(draw, 392, 758, 30, "#e2d2c3", "IT", "复制站点")
@@ -158,10 +161,10 @@ def create_eu():
 
     rounded(draw, (846, 302, 1512, 892))
     card_title(draw, 882, 338, "CATEGORY PRIORITY", "应该先看的德国核心品类")
-    bar(draw, 882, 430, "厨房龙头", "€16.1M", 1.0, ACCENT)
-    bar(draw, 882, 545, "手持花洒", "€10.8M", 0.67, ACCENT_2)
-    bar(draw, 882, 660, "淋浴系统", "€10.7M", 0.66, ACCENT_3)
-    bar(draw, 882, 775, "面盆龙头", "€9.3M", 0.58, "#d2baa3")
+    bar(draw, 882, 430, "厨房龙头", "€6.1M", 1.0, ACCENT)
+    bar(draw, 882, 545, "手持花洒", "€0.8M", 0.67, ACCENT_2)
+    bar(draw, 882, 660, "淋浴系统", "€0.7M", 0.66, ACCENT_3)
+    bar(draw, 882, 775, "面盆龙头", "€0.3M", 0.58, "#d2baa3")
     image.save(OUT_DIR / "eu-bathroom-report-board.png")
 
 
