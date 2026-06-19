@@ -184,7 +184,7 @@ button {
 }
 
 .project-hero {
-    grid-template-columns: minmax(0, 1.2fr) minmax(290px, 0.78fr);
+    grid-template-columns: minmax(0, 1.24fr) minmax(260px, 0.76fr);
     align-items: start;
 }
 
@@ -243,7 +243,7 @@ button {
 .metric-grid,
 .process-grid,
 .detail-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 .dashboard-grid {
@@ -406,6 +406,11 @@ button {
     gap: 16px;
 }
 
+.sidebar-card,
+.project-hero-side {
+    padding: 24px 22px;
+}
+
 .project-poster-frame {
     position: relative;
     overflow: hidden;
@@ -443,21 +448,34 @@ button {
     gap: 10px;
 }
 
+.project-hero-main .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-hero-main .metric-card {
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.48);
+}
+
 .metric-value {
-    font-size: clamp(28px, 3vw, 42px);
+    font-size: clamp(24px, 2.7vw, 36px);
+    line-height: 1.04;
+    word-break: break-word;
 }
 
 .project-meta-list,
 .detail-list {
     list-style: none;
-    gap: 16px;
+    gap: 14px;
 }
 
 .project-meta-list li,
 .detail-list li {
     display: grid;
-    gap: 6px;
-    padding-top: 14px;
+    gap: 8px;
+    padding: 14px 0 0;
     border-top: 1px solid var(--line);
 }
 
@@ -469,7 +487,7 @@ button {
 
 .project-meta-list span,
 .detail-list span {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 800;
     color: var(--muted);
     letter-spacing: 0.16em;
@@ -479,6 +497,18 @@ button {
 .project-meta-list strong,
 .detail-list strong {
     font-weight: 700;
+}
+
+.project-meta-list strong,
+.project-meta-list p,
+.detail-list strong,
+.detail-list p {
+    font-size: 15px;
+    line-height: 1.72;
+}
+
+.project-meta-list strong {
+    display: block;
 }
 
 .content-card {
@@ -791,6 +821,45 @@ button {
     gap: 18px;
 }
 
+.sidebar-card .section-title,
+.project-hero-side .section-title {
+    font-size: clamp(24px, 2.3vw, 34px);
+    line-height: 1.16;
+}
+
+.card > p:not(.eyebrow),
+.list-card > p:not(.eyebrow),
+.portfolio-card > p:not(.eyebrow),
+.insight-card > p:not(.eyebrow),
+.process-card > p:not(.process-index),
+.signal-card > p:not(.caption-line),
+.quote-card > p,
+.metric-note,
+.viz-caption,
+.chart-caption,
+.detail-copy,
+.mini-note {
+    font-size: 15px;
+    line-height: 1.74;
+}
+
+.insight-card .card-title,
+.process-card .card-title,
+.signal-card .card-title,
+.quote-card .card-title {
+    font-size: clamp(18px, 2vw, 24px);
+    line-height: 1.18;
+}
+
+.metric-card,
+.process-card,
+.signal-card,
+.insight-card,
+.quote-card,
+.detail-stat {
+    min-width: 0;
+}
+
 @media (max-width: 1040px) {
     .hero-grid,
     .project-hero,
@@ -828,6 +897,11 @@ button {
     .dashboard-card,
     .content-card {
         padding: 24px;
+    }
+
+    .sidebar-card,
+    .project-hero-side {
+        padding: 20px 18px;
     }
 
     .button-group {
