@@ -4,89 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>思考与生活 | WW.WIKI</title>
+    <link rel="stylesheet" href="styles/site.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="description" content="真实博客与生活观察：从 AI Agent 工作流到项目管理、旅行与个人成长的真实记录，比履历更直接地反映判断方式。">
+    <link rel="canonical" href="https://ww5468451.github.io/vibecastle/thoughts.html">
+    <meta property="og:site_name" content="WW.WIKI">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="思考与生活 | WW.WIKI">
+    <meta property="og:description" content="真实博客与生活观察：从 AI Agent 工作流到项目管理、旅行与个人成长的真实记录，比履历更直接地反映判断方式。">
+    <meta property="og:url" content="https://ww5468451.github.io/vibecastle/thoughts.html">
+    <meta property="og:image" content="https://ww5468451.github.io/vibecastle/images/og-card.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="思考与生活 | WW.WIKI">
+    <meta name="twitter:description" content="真实博客与生活观察：从 AI Agent 工作流到项目管理、旅行与个人成长的真实记录，比履历更直接地反映判断方式。">
+    <meta name="twitter:image" content="https://ww5468451.github.io/vibecastle/images/og-card.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        /* 全局统一核心样式 */
-        :root { --bg-color: #fafafc; --text-main: #111111; --text-muted: #666666; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-color);
-            background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px; color: var(--text-main); line-height: 1.6; overflow-x: hidden;
-        }
-        
-        /* 统一导航栏样式 */
-        .navbar {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 25px 5vw; background: rgba(250,250,252,0.8);
-            backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-        .logo { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text-main); text-decoration: none; }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a {
-            text-decoration: none; color: var(--text-muted);
-            font-size: 15px; font-weight: 600; transition: color 0.3s ease;
-        }
-        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
-        
-        /* 页面容器 */
-        .container { max-width: 900px; margin: 0 auto; padding: 80px 20px; animation: fadeIn 0.8s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* 页面头 */
-        .page-header { margin-bottom: 50px; }
-        .page-header h1 { font-size: 40px; font-weight: 800; margin-bottom: 15px; letter-spacing: -1px; }
-        
-        /* 文章列表区域 - 保持你原有的结构 */
-        .thought-list { display: flex; flex-direction: column; gap: 20px; }
-        .thought-item {
-            background: #fff; border: 1px solid rgba(0,0,0,0.06); border-radius: 16px;
-            padding: 24px; text-decoration: none; display: block;
-            transition: all 0.3s ease;
-        }
-        .thought-item:hover { border-color: #000; transform: translateX(5px); }
-        .thought-item h3 { font-size: 18px; font-weight: 700; color: #111; margin-bottom: 4px; }
-        .thought-item span { font-size: 14px; color: #888; }
-    </style>
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@500;600;700&display=swap">
+    <script defer src="scripts/site-nav.js"></script>
 </head>
 <body>
-
     <nav class="navbar">
-        <a href="index.html" class="logo">WW.WIKI</a>
+        <a class="logo" href="index.html">WW.WIKI</a>
         <div class="nav-links">
             <a href="index.html">首页</a>
             <a href="projects.html">项目与洞察</a>
-            <a href="thoughts.html" class="active">思考与生活</a>
+            <a class="active" href="thoughts.html">思考与生活</a>
             <a href="about.html">关于我</a>
         </div>
     </nav>
+    <main class="site-shell">
+        <section class="panel page-intro">
+            <p class="kicker">Writing / Notes</p>
+            <h1 class="display-title wide">真实记录，比包装过的简介更有说服力。</h1>
+            <p class="lead">这里放的是博客、复盘和生活观察。它们会比履历更直接地反映我的判断方式。</p>
+            <div class="chip-row">
+                <span class="chip">Work reflection</span>
+                <span class="chip">Technology notes</span>
+                <span class="chip">Life archive</span>
+            </div>
+        </section>
 
-    <main class="container">
-        <header class="page-header">
-            <h1>思考与生活</h1>
-        </header>
+        <section class="section-block">
+            <div class="section-head">
+                <p class="kicker">Article Archive</p>
+                <h2 class="section-title">这些文章不是“运营内容”，而是我真实写下来的思考痕迹。</h2>
+            </div>
+            <div class="three-col-grid">
+                <a class="card" href="2026/0620AI在鞭挞人不断干活.html">
+                    <p class="eyebrow">2026-06-20</p>
+                    <h3 class="card-title">AI 在鞭挞人不断干活</h3>
+                    <p>从聊天式 AI 转向 Agent 工作流之后，第一次明显感受到“工具正在反过来推着人产出”。</p>
+                </a>
+                <a class="card" href="2026/0517幸福源于觉察.html">
+                    <p class="eyebrow">2026-05-17</p>
+                    <h3 class="card-title">幸福源于觉察</h3>
+                    <p>从一部番剧、一次旅行和一段旧日向往里，重新意识到自己其实已经活在曾经梦想的生活里。</p>
+                </a>
+                <a class="card" href="2026/0522我的第一个博客网站.html">
+                    <p class="eyebrow">2026-05-22</p>
+                    <h3 class="card-title">我的第一个博客网站</h3>
+                    <p>记录第一次认真搭建个人站的兴奋感，也保留了从静态页到持续更新空间的起点。</p>
+                </a>
+                <a class="card" href="2026/0417vibe-coding初体验.html">
+                    <p class="eyebrow">2026-04-17</p>
+                    <h3 class="card-title">Vibe Coding 初体验</h3>
+                    <p>关于 AI 编码工具、自动化工作流和协作方式变化的一手体验记录。</p>
+                </a>
+                <a class="card" href="2026/0323接手项目经理工作有感.html">
+                    <p class="eyebrow">2026-03-23</p>
+                    <h3 class="card-title">接手项目经理工作有感</h3>
+                    <p>关于角色切换、协同推进与如何把混乱收束成节奏的记录。</p>
+                </a>
+                <a class="card" href="2026/0318同事离职有感.html">
+                    <p class="eyebrow">2026-03-18</p>
+                    <h3 class="card-title">同事离职有感</h3>
+                    <p>面对变化时对组织、关系和个人节奏的观察与反思。</p>
+                </a>
+                <a class="card" href="2026/0302生活秩序脱轨.html">
+                    <p class="eyebrow">2026-03-02</p>
+                    <h3 class="card-title">生活秩序脱轨</h3>
+                    <p>当生活和工作失去稳定节奏后，我如何重新把自己拉回轨道。</p>
+                </a>
+                <a class="card" href="2026/0212鲁豫对谈许知远.html">
+                    <p class="eyebrow">2026-02-12</p>
+                    <h3 class="card-title">鲁豫对谈许知远</h3>
+                    <p>一篇由对谈内容延伸出来的观察，关于表达、人物和精神气质。</p>
+                </a>
+            </div>
+        </section>
 
-        <!-- 这里是你之前的文章列表结构，我已适配新 UI -->
-        <div class="thought-list">
-            <a href="article1.html" class="thought-item">
-                <h3>这里是你的文章标题 1</h3>
-                <span>发布日期或摘要信息</span>
+        <section class="section-block">
+            <a class="list-card" href="2026/0120新加坡3日游记.html">
+                <p class="eyebrow">Travel note</p>
+                <h3 class="card-title">新加坡 3 日游记</h3>
+                <p>放在列表最后的一篇旅途记录，保留了站内内容不只围绕工作，也围绕真实生活的样子。</p>
+                <span class="link-inline">阅读全文 →</span>
             </a>
-            
-            <a href="article2.html" class="thought-item">
-                <h3>这里是你的文章标题 2</h3>
-                <span>发布日期或摘要信息</span>
-            </a>
-            
-            <!-- 请在此处继续添加你原有的文章列表 -->
-        </div>
+        </section>
     </main>
-
 </body>
 </html>
+
+

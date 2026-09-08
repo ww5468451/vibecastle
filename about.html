@@ -4,146 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>关于我 | WW.WIKI</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="description" content="结构化思维者与跨学科分析型工作者：市场调研、消费者洞察、数据分析与产品策略串成可落地闭环的能力介绍。">
+    <link rel="canonical" href="https://ww5468451.github.io/vibecastle/about.html">
+    <meta property="og:site_name" content="WW.WIKI">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="关于我 | WW.WIKI">
+    <meta property="og:description" content="结构化思维者与跨学科分析型工作者：市场调研、消费者洞察、数据分析与产品策略串成可落地闭环的能力介绍。">
+    <meta property="og:url" content="https://ww5468451.github.io/vibecastle/about.html">
+    <meta property="og:image" content="https://ww5468451.github.io/vibecastle/images/og-card.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="关于我 | WW.WIKI">
+    <meta name="twitter:description" content="结构化思维者与跨学科分析型工作者：市场调研、消费者洞察、数据分析与产品策略串成可落地闭环的能力介绍。">
+    <meta name="twitter:image" content="https://ww5468451.github.io/vibecastle/images/og-card.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        /* 全局统一核心样式 */
-        :root { --bg-color: #fafafc; --text-main: #111111; --text-muted: #666666; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-color);
-            background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px; color: var(--text-main); line-height: 1.6; overflow-x: hidden;
-        }
-        
-        /* 统一导航栏样式 */
-        .navbar {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 25px 5vw; background: rgba(250,250,252,0.8);
-            backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-        .logo { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text-main); text-decoration: none; }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a {
-            text-decoration: none; color: var(--text-muted);
-            font-size: 15px; font-weight: 600; transition: color 0.3s ease;
-        }
-        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
-        
-        /* 页面容器 */
-        .container { max-width: 900px; margin: 0 auto; padding: 80px 20px; animation: fadeIn 0.8s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* 关于我页面定制样式 */
-        .vibe-player {
-            display: inline-flex; align-items: center; gap: 15px; padding: 10px 20px;
-            background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 50px;
-            margin-bottom: 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-        }
-        .vibe-player span { font-size: 12px; font-weight: 800; letter-spacing: 1px; }
-        .vibe-player .controls { display: flex; gap: 8px; cursor: pointer; color: var(--text-muted); }
-
-        .about-header { border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 40px; margin-bottom: 40px; }
-        .about-header h1 { font-size: 48px; font-weight: 800; margin-bottom: 10px; letter-spacing: -1px; }
-        .about-header .subtitle { font-size: 18px; color: var(--text-muted); }
-
-        .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; }
-        
-        .photo-placeholder {
-            width: 100%; aspect-ratio: 1; background: #e5e5ea; border-radius: 24px;
-            display: flex; align-items: center; justify-content: center; color: #aaa;
-            font-weight: 600; font-size: 14px;
-        }
-
-        .role-title { font-size: 32px; font-weight: 800; line-height: 1.2; margin-bottom: 15px; letter-spacing: -0.5px; }
-        .focus-areas { color: var(--text-muted); font-size: 15px; margin-bottom: 30px; }
-        
-        .info-section { margin-bottom: 40px; }
-        .info-title { font-size: 12px; font-weight: 800; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 15px; text-transform: uppercase; }
-        
-        .profile-list { list-style: none; }
-        .profile-list li { margin-bottom: 10px; font-size: 15px; display: flex; gap: 15px;}
-        .profile-list li span:first-child { font-weight: 700; width: 60px; }
-        
-        .desc-text { font-size: 16px; line-height: 1.8; color: #444; margin-bottom: 15px; }
-        .highlight { font-weight: 700; color: #111; background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); padding: 0 4px; }
-
-        @media (max-width: 768px) {
-            .about-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
-        }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@500;600;700&display=swap">
+    <script defer src="scripts/site-nav.js"></script>
+    <link rel="stylesheet" href="styles/site.css">
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html" class="logo">WW.WIKI</a>
+        <a class="logo" href="index.html">WW.WIKI</a>
         <div class="nav-links">
             <a href="index.html">首页</a>
             <a href="projects.html">项目与洞察</a>
             <a href="thoughts.html">思考与生活</a>
-            <a href="about.html" class="active">关于我</a>
+            <a class="active" href="about.html">关于我</a>
         </div>
     </nav>
 
-    <main class="container">
-        <div class="vibe-player">
-            <span>PWLT</span>
-            <div class="controls">▶️ ⏭️</div>
-        </div>
-
-        <header class="about-header">
-            <h1>HEY THERE.</h1>
-            <p class="subtitle">透过数据与聆听，寻找技术重塑生活的绝佳切入点。</p>
-        </header>
-
-        <div class="about-grid">
-            <aside>
-                <div class="photo-placeholder">
-                    [ 头像 / 照片占位 ]
+    <main class="site-shell">
+        <section class="panel hero-grid">
+            <div class="stack-lg">
+                <p class="kicker">About / Professional Profile</p>
+                <h1 class="display-title wide">把问题看清楚，把协作推进稳。</h1>
+                <p class="lead">我是一个高度理性的结构化思维者，也是一名擅长跨学科整合的分析型工作者。面对庞杂的商业信息时，我习惯先追溯底层逻辑、判断框架与评估标准，而不是停留在表层现象；再把市场调研、消费者洞察、数据分析与产品策略串成可以落地的完整闭环。</p>
+                <div class="chip-row">
+                    <span class="chip">Market Research</span>
+                    <span class="chip">Consumer Insight</span>
+                    <span class="chip">Data Modeling</span>
+                    <span class="chip">Product Strategy</span>
                 </div>
-                <div class="info-section" style="margin-top: 30px;">
-                    <h3 class="info-title">PROFILE</h3>
-                    <ul class="profile-list">
-                        <li><span>BORN</span> 2001.05.21</li>
-                        <li><span>BASE</span> 深圳</li>
-                        <li><span>VIBE</span> 理性观察 / 洞察</li>
+            </div>
+
+            <aside class="panel-inset sidebar-card">
+                <div class="stack-md">
+                    <p class="eyebrow">Profile</p>
+                    <h2 class="section-title">Researcher<br>Analyst<br>Integrator</h2>
+                    <ul class="detail-list">
+                        <li>
+                            <span>Base</span>
+                            <strong>深圳</strong>
+                        </li>
+                        <li>
+                            <span>Focus</span>
+                            <strong>移动出行 / 适老化市场 / 智能硬件 / 跨境消费品研究</strong>
+                        </li>
+                        <li>
+                            <span>Role</span>
+                            <strong>市场分析师 · 消费者洞察 · 商业数据分析 · 项目推进</strong>
+                        </li>
+                    </ul>
+                    <p class="eyebrow">Contact</p>
+                    <ul class="detail-list">
+                        <li>
+                            <span>GitHub</span>
+                            <strong><a href="https://github.com/ww5468451" target="_blank" rel="noreferrer">@ww5468451</a></strong>
+                        </li>
+                        <li>
+                            <span>Email</span>
+                            <strong>2673398966@qq.com</strong>
+                        </li>
+                        <li>
+                            <span>Email</span>
+                            <strong>krystalwyq0521@gmail.com</strong>
+                        </li>
                     </ul>
                 </div>
-                <h3 class="info-title" style="margin-top: 30px;">CONNECT</h3>
-                <ul class="profile-list">
-                    <li><span>GITHUB:</span> <a href="https://github.com/ww5468451" target="_blank" style="color: #666;">@ww</a></li>
-                    <li><span>EMAIL:2673398966@qq.com</span> </li>
-                    <li><span>EMAIL:krystalwyq0521@gmail.com</span> </li>
-                    <li><span>LINKEDIN:wait...</span> </li>
-                </ul>
             </aside>
+        </section>
 
-            <article>
-                <h2 class="role-title">Market Researcher<br>& Consumer Insight Analyst</h2>
-                <p class="focus-areas">专注领域：适老化市场 (Silver Economy) / 移动出行 (E-Mobility) / 智能硬件</p>
-                
-                <div class="info-section">
-                    <h3 class="info-title">CORE SKILLS</h3>
-                    <p class="desc-text">
-                        社会化聆听 (Social Listening) · 消费者痛点挖掘 · 竞品深度剖析 · 数据可视化
-                    </p>
-                    <p class="desc-text">
-                        跳出传统的问卷框架，通过深入 Reddit (如 r/disability)、Amazon 真实评论区进行<span class="highlight">社会化聆听</span>。从北美高龄代步车的需求痛点，到集成 Find My 防盗网络的滑板车成本评估，我相信最敏锐的商业机会，永远藏在用户的原声数据里。
-                    </p>
-                </div>
-
-                <div class="info-section">
-                    <h3 class="info-title">CURRENTLY</h3>
-                    <p class="desc-text">
-                        深入调研<span class="highlight">国内外适老化电商市场</span>，输出驱动业务增长与产品迭代的商业分析报告。
-                    </p>
-                </div>
+        <section class="section-block two-col-grid">
+            <article class="content-card rich-text">
+                <h2>关于我</h2>
+                <p>我擅长在复杂、分散、甚至互相矛盾的信息里建立秩序。无论是市场趋势、消费者反馈、平台评价，还是业务推进中的零碎问题，我都会先拆解出核心变量，再建立判断框架，最后把它们收束成可执行的结论。</p>
+                <p>相比“快速给出一个看起来正确的答案”，我更在意判断过程是否足够扎实：研究路径是否合理、证据能否互相印证、结论有没有落到真正能被团队使用的层面。这种工作方式让我能够把数据推演的严谨性与对宏观规律的敏锐洞察结合起来，形成更稳固的商业判断。</p>
             </article>
-        </div>
+
+            <article class="content-card rich-text">
+                <h2>我希望呈现的职业形象</h2>
+                <p>如果把我放进团队里，我希望自己是那个既能看懂市场、读懂用户，也能把复杂议题讲清楚并持续推进的人。我的价值不只在于分析本身，还在于把分析转成产品定义、优先级建议、进入判断和跨团队协同动作。</p>
+                <p>这也是我搭建这个网站的原因。它不只是作品集，更像一个长期更新的职业样本：你会在这里看到我如何研究、如何思考、如何把方法沉淀为内容，并把内容继续反哺到业务判断里。</p>
+            </article>
+        </section>
+
+        <section class="section-block three-col-grid">
+            <article class="card">
+                <p class="eyebrow">Capability 01</p>
+                <h3 class="card-title">市场调研与消费者洞察</h3>
+                <p>能够主导多阶段的海外与本土市场调研，从 Amazon、Reddit 等平台的非结构化评价、论坛反馈与用户原声中提炼痛点、需求与购买逻辑，并将其转化为可执行的产品定义与优先级判断。</p>
+            </article>
+            <article class="card">
+                <p class="eyebrow">Capability 02</p>
+                <h3 class="card-title">商业数据分析与指标建模</h3>
+                <p>具备跨维度数据拆解、清洗与重组能力，能够基于底层原始数据构建核心指标体系，识别区域主导产业、市场增长趋势、价格带结构与潜在发展机遇，让数据真正支持业务决策。</p>
+            </article>
+            <article class="card">
+                <p class="eyebrow">Capability 03</p>
+                <h3 class="card-title">产品分析、数据可视化与输出</h3>
+                <p>对消费级高科技出海硬件，尤其是 Personal Mobility 领域保持持续关注，熟悉从消费者需求倒推产品定义与功能矩阵的方法，也能通过结构化报告和数据可视化把复杂信息清晰呈现给团队使用。</p>
+            </article>
+        </section>
+
+        <p class="footer">WW.WIKI 作为个人品牌站持续更新中。页面结构已统一，后续可以继续添加案例、文章与简历信息。</p>
     </main>
 </body>
 </html>

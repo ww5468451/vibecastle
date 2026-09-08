@@ -4,122 +4,433 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>项目与洞察 | WW.WIKI</title>
+    <link rel="stylesheet" href="styles/site.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="description" content="围绕职业能力的作品集：消费者洞察、市场进入判断、数据分析与产品定义、跨团队推进，每条能力线都有真实案例与交互看板支撑。">
+    <link rel="canonical" href="https://ww5468451.github.io/vibecastle/projects.html">
+    <meta property="og:site_name" content="WW.WIKI">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="项目与洞察 | WW.WIKI">
+    <meta property="og:description" content="围绕职业能力的作品集：消费者洞察、市场进入判断、数据分析与产品定义、跨团队推进，每条能力线都有真实案例与交互看板支撑。">
+    <meta property="og:url" content="https://ww5468451.github.io/vibecastle/projects.html">
+    <meta property="og:image" content="https://ww5468451.github.io/vibecastle/images/og-card.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="项目与洞察 | WW.WIKI">
+    <meta name="twitter:description" content="围绕职业能力的作品集：消费者洞察、市场进入判断、数据分析与产品定义、跨团队推进，每条能力线都有真实案例与交互看板支撑。">
+    <meta name="twitter:image" content="https://ww5468451.github.io/vibecastle/images/og-card.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        /* 全局统一核心样式 */
-        :root { --bg-color: #fafafc; --text-main: #111111; --text-muted: #666666; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-color);
-            background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px; color: var(--text-main); line-height: 1.6; overflow-x: hidden;
-        }
-        
-        /* 统一导航栏样式 */
-        .navbar {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 25px 5vw; background: rgba(250,250,252,0.8);
-            backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 100;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-        .logo { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: var(--text-main); text-decoration: none; }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a {
-            text-decoration: none; color: var(--text-muted);
-            font-size: 15px; font-weight: 600; transition: color 0.3s ease;
-        }
-        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
-        
-        /* 页面容器 */
-        .container { max-width: 900px; margin: 0 auto; padding: 80px 20px; animation: fadeIn 0.8s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* 项目页面定制样式 */
-        .page-header { margin-bottom: 50px; }
-        .page-header h1 { font-size: 40px; font-weight: 800; margin-bottom: 15px; letter-spacing: -1px; }
-        .page-header p { color: var(--text-muted); font-size: 18px; max-width: 600px; }
-
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .project-card {
-            background: #fff; border: 1px solid rgba(0,0,0,0.06); border-radius: 20px;
-            padding: 35px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative; text-decoration: none; display: flex; flex-direction: column;
-        }
-        .project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.06); }
-        .project-year { font-size: 13px; font-weight: 800; color: #111; margin-bottom: 15px; letter-spacing: 1px; }
-        .project-title { font-size: 22px; font-weight: 700; color: #111; margin-bottom: 15px; line-height: 1.3; }
-        .project-desc { font-size: 15px; color: #666; line-height: 1.7; margin-bottom: 25px; flex-grow: 1; }
-        .project-tags { display: flex; flex-wrap: wrap; gap: 10px; }
-        .project-tag { font-size: 12px; font-weight: 600; background: #f5f5f7; color: #555; padding: 6px 12px; border-radius: 8px; }
-        
-        .project-arrow {
-            position: absolute; top: 35px; right: 35px; font-size: 20px; color: #ccc;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-        .project-card:hover .project-arrow { color: #111; transform: translate(3px, -3px); }
-
-        @media (max-width: 768px) { .nav-links { display: none; } }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@500;600;700&display=swap">
+    <script defer src="scripts/site-nav.js"></script>
 </head>
 <body>
-
     <nav class="navbar">
-        <a href="index.html" class="logo">WW.WIKI</a>
+        <a class="logo" href="index.html">WW.WIKI</a>
         <div class="nav-links">
             <a href="index.html">首页</a>
-            <a href="projects.html" class="active">项目与洞察</a>
+            <a class="active" href="projects.html">项目与洞察</a>
             <a href="thoughts.html">思考与生活</a>
             <a href="about.html">关于我</a>
         </div>
     </nav>
 
-    <main class="container">
-        <header class="page-header">
-            <h1>项目与洞察</h1>
-            <p>跨越数字与物理世界的边界。这里收录了我在用户研究、数据分析以及前沿技术探索中的实践与成果。</p>
-        </header>
+    <main class="site-shell">
+        <section class="panel page-intro">
+            <p class="kicker">Capability Portfolio / Selected Work</p>
+            <h1 class="display-title wide">用一组高价值项目，证明我不仅会研究，更能判断、定义与推进。</h1>
+            <p class="lead">这不是单纯的项目陈列，而是一套围绕职业能力展开的作品集：消费者洞察、市场进入判断、数据分析与产品定义、以及跨团队推进。每条能力线都至少有两个案例支撑，展示我如何把模糊问题拆清楚，把证据做扎实，再把结论转成可执行的业务动作。</p>
+            <div class="chip-row">
+                <span class="chip">Consumer Insight</span>
+                <span class="chip">Market Entry</span>
+                <span class="chip">Business Analysis</span>
+                <span class="chip">Project Delivery</span>
+            </div>
+        </section>
 
-        <div class="project-grid">
-            <!-- 项目 1 -->
-            <a href="/archive/project1.html" class="project-card">
-                <div class="project-arrow">↗</div>
-                <div class="project-year">2025 // 移动出行</div>
-                <h2 class="project-title">破局体验盲区：基于海量原声数据(VOC)的出行重塑</h2>
-                <p class="project-desc">跳出传统的问卷框架，通过对数万条真实用户乘车评价与客服录音进行 NLP 情感清洗与定性解码，精准定位了司乘交互过程中的“沉默痛点”。该研究成功推动了产品评价体系的迭代，使用户核心诉求的响应时间缩短了30%。最敏锐的商业机会，永远藏在第一手的声音里。</p>
-                <div class="project-tags">
-                    <span class="project-tag">VOC 数据分析</span>
-                    <span class="project-tag">用户体验研究</span>
-                </div>
-            </a>
+        <section class="section-block metric-grid">
+            <article class="metric-card">
+                <p class="metric-label">项目案例</p>
+                <strong class="metric-value">8</strong>
+                <p class="metric-note">按四条核心能力线组织，每条能力线都有完整项目支撑，而不是单点展示。</p>
+            </article>
+            <article class="metric-card">
+                <p class="metric-label">覆盖国家</p>
+                <strong class="metric-value">9</strong>
+                <p class="metric-note">中国、美国、泰国、墨西哥、英国，以及欧洲五国站点的市场与平台判断。</p>
+            </article>
+            <article class="metric-card">
+                <p class="metric-label">数据来源</p>
+                <strong class="metric-value">6</strong>
+                <p class="metric-note">VOC 评论、论坛、客服记录、电商平台、行业报告、标杆企业资料交叉使用。</p>
+            </article>
+            <article class="metric-card">
+                <p class="metric-label">交付导向</p>
+                <strong class="metric-value">4</strong>
+                <p class="metric-note">最终都回到进入策略、产品定义、优先级判断或跨团队推进，而不止停在结论本身。</p>
+            </article>
+        </section>
 
-            <!-- 项目 2 -->
-            <a href="#" class="project-card">
-                <div class="project-arrow">↗</div>
-                <div class="project-year">2026 // 适老化设计</div>
-                <h2 class="project-title">科技的温情：超越硬件的“适老化”重塑计划</h2>
-                <p class="project-desc">适老化改造，不仅是把字放大或加装扶手，更是尊严的重塑。通过深度入户跟访与行为观察，解构银发族在数字时代的真实困境。项目提出了一套融合“无意识交互”与“情感陪伴”的适老化服务蓝图，让科技真正以平视的角度服务于长者。</p>
-                <div class="project-tags">
-                    <span class="project-tag">定性调研</span>
-                    <span class="project-tag">包容性设计</span>
-                </div>
-            </a>
+        <section class="section-block">
+            <div class="section-head">
+                <p class="kicker">Capability 01</p>
+                <h2 class="section-title">消费者洞察与用户研究</h2>
+                <p class="lead">聚焦真实需求、使用障碍与购买决策变量，输出可直接服务产品与运营的判断。</p>
+            </div>
 
-            <!-- 项目 3 -->
-            <a href="#" class="project-card">
-                <div class="project-arrow">↗</div>
-                <div class="project-year">2026 // 个人技术力</div>
-                <h2 class="project-title">WW.WIKI：纯静态数字花园的从0到1</h2>
-                <p class="project-desc">摒弃了臃肿的现代前端框架与复杂的动态路由，通过纯原生 HTML/CSS 构建的个人知识库。以最轻量的底层逻辑，实现了高流畅度的页面切换与极简的美学体验。在喧嚣的技术栈迭代中，留下一处安静解构生活与代码的数字花园。</p>
-                <div class="project-tags">
-                    <span class="project-tag">前端开发</span>
-                    <span class="project-tag">Vibe Coding</span>
+            <div class="projects-grid">
+                <a class="portfolio-card" href="archive/project-voc.html">
+                    <div class="project-poster-frame">
+                        <svg class="project-poster" viewBox="0 0 560 320" role="img" aria-label="移动出行 VOC 洞察体系">
+                            <rect width="560" height="320" rx="24" fill="#fffaf3"></rect>
+                            <rect x="28" y="28" width="170" height="104" rx="18" fill="#f1ebe0"></rect>
+                            <rect x="216" y="28" width="316" height="104" rx="18" fill="#faf4ea"></rect>
+                            <rect x="28" y="152" width="504" height="140" rx="22" fill="#f7f1e7"></rect>
+                            <text x="48" y="63" font-size="20" font-family="Manrope, sans-serif" fill="#6f655b">Signals</text>
+                            <text x="48" y="102" font-size="42" font-family="'Noto Serif SC', serif" fill="#1b1713">VOC</text>
+                            <text x="236" y="66" font-size="17" font-family="Manrope, sans-serif" fill="#6f655b">Review / CS / Forum / Social</text>
+                            <line x1="236" y1="84" x2="506" y2="84" stroke="#d4c9b7" stroke-width="2"></line>
+                            <line x1="236" y1="110" x2="468" y2="110" stroke="#e0d6c5" stroke-width="2"></line>
+                            <rect x="54" y="186" width="112" height="20" rx="10" fill="#1b1713"></rect>
+                            <rect x="54" y="222" width="220" height="20" rx="10" fill="#817469"></rect>
+                            <rect x="54" y="258" width="176" height="20" rx="10" fill="#b2a494"></rect>
+                            <text x="300" y="196" font-size="14" font-family="Manrope, sans-serif" fill="#6f655b">续航 / 组装 / 舒适度 / 性价比</text>
+                            <text x="300" y="228" font-size="14" font-family="Manrope, sans-serif" fill="#6f655b">把用户原声转成产品优先级</text>
+                            <text x="300" y="260" font-size="14" font-family="Manrope, sans-serif" fill="#6f655b">让研发和运营共享同一套判断语言</text>
+                        </svg>
+                    </div>
+                    <div class="visual-stack">
+                        <p class="eyebrow">Case study / Consumer insight</p>
+                        <h3 class="card-title">移动出行 VOC 洞察体系</h3>
+                        <p>把评论、客服、论坛和社媒里的高噪声反馈清洗成可讨论、可排序、可被团队复用的用户判断框架。</p>
+                        <div class="chip-row">
+                            <span class="chip">用户之声</span>
+                            <span class="chip">需求优先级</span>
+                            <span class="chip">定性分析</span>
+                        </div>
+                        <span class="link-inline">查看完整案例 →</span>
+                    </div>
+                </a>
+
+                <a class="portfolio-card" href="archive/project-senior-mobility.html">
+                    <div class="project-poster-frame">
+                        <svg class="project-poster" viewBox="0 0 560 320" role="img" aria-label="美国辅助出行市场盘点">
+                            <rect width="560" height="320" rx="24" fill="#fffaf3"></rect>
+                            <rect x="42" y="48" width="146" height="196" rx="26" fill="#f0e7db"></rect>
+                            <rect x="214" y="48" width="304" height="56" rx="18" fill="#f7efdf"></rect>
+                            <rect x="214" y="124" width="304" height="120" rx="24" fill="#f6efe4"></rect>
+                            <circle cx="108" cy="110" r="26" fill="#1b1713"></circle>
+                            <circle cx="108" cy="182" r="34" fill="#817469"></circle>
+                            <circle cx="318" cy="186" r="42" fill="#1b1713"></circle>
+                            <circle cx="398" cy="186" r="28" fill="#817469"></circle>
+                            <circle cx="468" cy="186" r="22" fill="#b9aa97"></circle>
+                            <text x="244" y="82" font-size="16" font-family="Manrope, sans-serif" fill="#6f655b">Trike / Scooter / Wheelchair</text>
+                            <text x="244" y="160" font-size="16" font-family="Manrope, sans-serif" fill="#6f655b">Monthly sales</text>
+                            <text x="244" y="206" font-size="14" font-family="Manrope, sans-serif" fill="#6f655b">识别高客单、高门槛、</text>
+                            <text x="244" y="230" font-size="14" font-family="Manrope, sans-serif" fill="#6f655b">低集中度的优先切口</text>
+                        </svg>
+                    </div>
+                    <div class="visual-stack">
+                        <p class="eyebrow">Case study / Segment research</p>
+                        <h3 class="card-title">美国辅助出行市场盘点</h3>
+                        <p>比较电动三轮车、四轮代步车与电动轮椅的规模、客单价与竞争集中度，筛选最值得进入的细分方向。</p>
+                        <div class="chip-row">
+                            <span class="chip">竞品盘点</span>
+                            <span class="chip">细分赛道</span>
+                            <span class="chip">机会筛选</span>
+                        </div>
+                        <span class="link-inline">查看完整案例 →</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <div class="section-head">
+                <p class="kicker">Capability 02</p>
+                <h2 class="section-title">市场进入与机会识别</h2>
+                <p class="lead">不是看见增长就进入，而是用结构化比较把真正值得投入的机会筛出来。</p>
+            </div>
+
+            <div class="projects-grid">
+                <a class="portfolio-card" href="archive/project-adaptive.html">
+                    <div class="project-poster-frame">
+                        <svg class="project-poster" viewBox="0 0 560 320" role="img" aria-label="银发消费与适老化机会地图">
+                            <rect width="560" height="320" rx="24" fill="#fffaf3"></rect>
+                            <circle cx="154" cy="124" r="74" fill="#efe5d7"></circle>
+                            <circle cx="280" cy="170" r="88" fill="#f7efdf"></circle>
+                            <circle cx="414" cy="124" r="74" fill="#f1ebe0"></circle>
+                            <text x="118" y="114" font-size="16" font-family="Manrope, sans-serif" fill="#6f655b">需求</text>
+                            <text x="104" y="146" font-size="22" font-family="'Noto Serif SC', serif" fill="#1b1713">能力边界</text>
+                            <text x="256" y="158" font-size="16" font-family="Manrope, sans-serif" fill="#6f655b">机会</text>
+                            <text x="218" y="192" font-size="26" font-family="'Noto Serif SC', serif" fill="#1b1713">适老化切口</text>
+                            <text x="394" y="114" font-size="16" font-family="Manrope, sans-serif" fill="#6f655b">供给</text>
+                            <text x="358" y="146" font-size="22" font-family="'Noto Serif SC', serif" fill="#1b1713">产品缺口</text>
+                            <rect x="54" y="242" width="452" height="26" rx="13" fill="#f3ecdf"></rect>
+                            <rect x="54" y="242" width="276" height="26" rx="13" fill="#1b1713"></rect>
+                            <text x="54" y="224" font-size="13" font-family="Manrope, sans-serif" fill="#6f655b">把大趋势拆成可进入、可定义、可验证的细分场景</text>
+                        </svg>
+                    </div>
+                    <div class="visual-stack">
+                        <p class="eyebrow">Case study / Opportunity mapping</p>
+                        <h3 class="card-title">银发消费与适老化机会地图</h3>
+                        <p>从老龄化趋势、行动辅助场景与供给缺口三条线切入，把“大机会”收敛成明确的产品与市场方向。</p>
+                        <div class="chip-row">
+                            <span class="chip">趋势拆解</span>
+                            <span class="chip">场景判断</span>
+                            <span class="chip">机会地图</span>
+                        </div>
+                        <span class="link-inline">查看完整案例 →</span>
+                    </div>
+                </a>
+
+                <a class="portfolio-card" href="archive/project-country-entry.html">
+                    <div class="project-poster-frame">
+                        <svg class="project-poster" viewBox="0 0 560 320" role="img" aria-label="多国家电商进入判断">
+                            <rect width="560" height="320" rx="24" fill="#fffaf3"></rect>
+                            <rect x="38" y="40" width="484" height="82" rx="22" fill="#f6efe4"></rect>
+                            <rect x="38" y="142" width="484" height="138" rx="24" fill="#f8f1e7"></rect>
+                            <circle cx="110" cy="81" r="22" fill="#1b1713"></circle>
+                            <circle cx="110" cy="211" r="18" fill="#1b1713"></circle>
+                            <circle cx="110" cy="247" r="18" fill="#817469"></circle>
+                            <text x="152" y="72" font-size="17" font-family="Manrope, sans-serif" fill="#6f655b">Thailand / Mexico / UK</text>
+                            <text x="152" y="99" font-size="14" font-family="Manrope, sans-serif" fill="#6f655b">GMV / Platform / Logistics / Risk</text>
+                            <rect x="168" y="188" width="254" height="16" rx="8" fill="#1b1713"></rect>
+                            <rect x="168" y="224" width="206" height="16" rx="8" fill="#817469"></rect>
+                            <rect x="168" y="260" width="150" height="16" rx="8" fill="#b9aa97"></rect>
+                            <text x="440" y="200" font-size="14" font-family="Manrope, sans-serif" fill="#6f655b">优先级</text>
+                            <text x="440" y="236" font-size="14" font-family="Manrope, sans-serif" fill="#6f655b">成熟度</text>
+                            <text x="440" y="272" font-size="14" font-family="Manrope, sans-serif" fill="#6f655b">风险</text>
+                        </svg>
+                    </div>
+                    <div class="visual-stack">
+                        <p class="eyebrow">Case study / Market entry</p>
+                        <h3 class="card-title">多国家电商进入判断</h3>
+                        <p>将泰国、墨西哥与英国三个市场放进同一比较框架里，判断平台策略、物流门槛与进入优先顺序。</p>
+                        <div class="chip-row">
+                            <span class="chip">国家比较</span>
+                            <span class="chip">平台策略</span>
+                            <span class="chip">风险判断</span>
+                        </div>
+                        <span class="link-inline">查看完整案例 →</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <div class="section-head">
+                <p class="kicker">Capability 03</p>
+                <h2 class="section-title">数据分析与产品定义</h2>
+                <p class="lead">把分散数据整理成清晰的产品语言，让研发、业务与管理层可以在同一张板上做决定。</p>
+            </div>
+
+            <div class="projects-grid">
+                <a class="portfolio-card" href="archive/project-blog.html">
+                    <div class="project-poster-frame">
+                        <svg class="project-poster" viewBox="0 0 560 320" role="img" aria-label="通勤代步电助力车研发方案">
+                            <rect width="560" height="320" rx="24" fill="#fffaf3"></rect>
+                            <rect x="58" y="54" width="444" height="212" rx="26" fill="#f7f1e7"></rect>
+                            <rect x="86" y="88" width="148" height="122" rx="18" fill="#ece2d4"></rect>
+                            <rect x="256" y="88" width="216" height="20" rx="10" fill="#d8ccbc"></rect>
+                            <rect x="256" y="124" width="182" height="18" rx="9" fill="#b9aa97"></rect>
+                            <rect x="256" y="156" width="156" height="18" rx="9" fill="#817469"></rect>
+                            <rect x="256" y="188" width="128" height="18" rx="9" fill="#1b1713"></rect>
+                            <text x="102" y="124" font-size="22" font-family="'Noto Serif SC', serif" fill="#1b1713">R&amp;D</text>
+                            <text x="94" y="154" font-size="14" font-family="Manrope, sans-serif" fill="#6f655b">decision board</text>
+                            <text x="86" y="242" font-size="13" font-family="Manrope, sans-serif" fill="#6f655b">市场规模 / 价位带 / 款式结构 / 功能取舍</text>
+                        </svg>
+                    </div>
+                    <div class="visual-stack">
+                        <p class="eyebrow">Case study / Product framing</p>
+                        <h3 class="card-title">通勤代步电助力车研发方案</h3>
+                        <p>把市场规模、价格带、细分款式与功能取舍收束到同一张研发决策板里，帮助团队更快收敛产品定义。</p>
+                        <div class="chip-row">
+                            <span class="chip">产品定义</span>
+                            <span class="chip">价格策略</span>
+                            <span class="chip">可视化表达</span>
+                        </div>
+                        <span class="link-inline">查看完整案例 →</span>
+                    </div>
+                </a>
+
+                <a class="portfolio-card" href="archive/project-eu-bathroom-dashboard.html">
+                    <div class="project-poster-frame">
+                        <svg class="project-poster" viewBox="0 0 560 320" role="img" aria-label="欧洲卫浴数据看板">
+                            <rect width="560" height="320" rx="24" fill="#fffaf3"></rect>
+                            <rect x="34" y="36" width="492" height="248" rx="28" fill="#f7f1e7"></rect>
+                            <rect x="62" y="70" width="132" height="76" rx="18" fill="#efe5d7"></rect>
+                            <rect x="214" y="70" width="132" height="76" rx="18" fill="#f5eee4"></rect>
+                            <rect x="366" y="70" width="132" height="76" rx="18" fill="#efe5d7"></rect>
+                            <rect x="62" y="174" width="436" height="78" rx="22" fill="#fcf7ef"></rect>
+                            <rect x="94" y="208" width="218" height="14" rx="7" fill="#1b1713"></rect>
+                            <rect x="94" y="232" width="164" height="14" rx="7" fill="#817469"></rect>
+                            <text x="82" y="104" font-size="16" font-family="Manrope, sans-serif" fill="#6f655b">Germany</text>
+                            <text x="244" y="104" font-size="16" font-family="Manrope, sans-serif" fill="#6f655b">UK</text>
+                            <text x="388" y="104" font-size="16" font-family="Manrope, sans-serif" fill="#6f655b">France</text>
+                            <text x="336" y="208" font-size="13" font-family="Manrope, sans-serif" fill="#6f655b">新品率 / 价格带 /</text>
+                            <text x="336" y="228" font-size="13" font-family="Manrope, sans-serif" fill="#6f655b">类目表现 / 机会提示</text>
+                        </svg>
+                    </div>
+                    <div class="visual-stack">
+                        <p class="eyebrow">Case study / Data dashboard</p>
+                        <h3 class="card-title">欧洲卫浴数据看板</h3>
+                        <p>将欧洲五国站点的销售额、平均价格、新品占比与类目表现做成一页式分析面板，适合快速汇报与业务决策。</p>
+                        <div class="chip-row">
+                            <span class="chip">数据看板</span>
+                            <span class="chip">欧洲五国</span>
+                            <span class="chip">新品机会</span>
+                        </div>
+                        <span class="link-inline">查看完整案例 →</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <div class="section-head">
+                <p class="kicker">Capability 04</p>
+                <h2 class="section-title">商业分析与项目推进</h2>
+                <p class="lead">研究的价值不止在“看清楚”，还在于把资源、节奏和风险放到一个能推进的执行结构里。</p>
+            </div>
+
+            <div class="projects-grid">
+                <a class="portfolio-card" href="archive/project-notes.html">
+                    <div class="project-poster-frame">
+                        <svg class="project-poster" viewBox="0 0 560 320" role="img" aria-label="卫浴市场进入与跨团队推进">
+                            <rect width="560" height="320" rx="24" fill="#fffaf3"></rect>
+                            <rect x="56" y="50" width="124" height="64" rx="18" fill="#f0e7db"></rect>
+                            <rect x="218" y="50" width="124" height="64" rx="18" fill="#f5eee4"></rect>
+                            <rect x="380" y="50" width="124" height="64" rx="18" fill="#f0e7db"></rect>
+                            <rect x="137" y="192" width="124" height="64" rx="18" fill="#faf3e9"></rect>
+                            <rect x="299" y="192" width="124" height="64" rx="18" fill="#faf3e9"></rect>
+                            <path d="M180 82 H218" stroke="#1b1713" stroke-width="3" stroke-linecap="round"></path>
+                            <path d="M342 82 H380" stroke="#1b1713" stroke-width="3" stroke-linecap="round"></path>
+                            <path d="M280 114 V174" stroke="#1b1713" stroke-width="3" stroke-linecap="round"></path>
+                            <path d="M280 174 H199" stroke="#1b1713" stroke-width="3" stroke-linecap="round"></path>
+                            <path d="M280 174 H361" stroke="#1b1713" stroke-width="3" stroke-linecap="round"></path>
+                            <text x="90" y="89" font-size="16" font-family="Manrope, sans-serif" fill="#1b1713">需求方</text>
+                            <text x="242" y="89" font-size="16" font-family="Manrope, sans-serif" fill="#1b1713">项目经理</text>
+                            <text x="394" y="89" font-size="16" font-family="Manrope, sans-serif" fill="#1b1713">工厂 / 研发</text>
+                            <text x="160" y="231" font-size="16" font-family="Manrope, sans-serif" fill="#1b1713">节点清单</text>
+                            <text x="326" y="231" font-size="16" font-family="Manrope, sans-serif" fill="#1b1713">风险闭环</text>
+                            <text x="56" y="290" font-size="13" font-family="Manrope, sans-serif" fill="#6f655b">把复杂进入项目变成清晰可执行的推进路径</text>
+                        </svg>
+                    </div>
+                    <div class="visual-stack">
+                        <p class="eyebrow">Case study / Market entry delivery</p>
+                        <h3 class="card-title">卫浴市场进入与跨团队推进</h3>
+                        <p>把国内平台格局、欧洲站点机会与跨团队执行节奏收束进一套进入判断里，减少只停留在讨论层面的无效推进。</p>
+                        <div class="chip-row">
+                            <span class="chip">进入策略</span>
+                            <span class="chip">协同推进</span>
+                            <span class="chip">节奏管理</span>
+                        </div>
+                        <span class="link-inline">查看完整案例 →</span>
+                    </div>
+                </a>
+
+                <a class="portfolio-card" href="archive/project-benchmark.html">
+                    <div class="project-poster-frame">
+                        <svg class="project-poster" viewBox="0 0 560 320" role="img" aria-label="标杆企业分析">
+                            <rect width="560" height="320" rx="24" fill="#fffaf3"></rect>
+                            <rect x="42" y="50" width="218" height="214" rx="28" fill="#f7efdf"></rect>
+                            <rect x="286" y="50" width="232" height="214" rx="28" fill="#f1ebe0"></rect>
+                            <text x="74" y="100" font-size="16" font-family="Manrope, sans-serif" fill="#6f655b">Aukey Home</text>
+                            <text x="74" y="138" font-size="34" font-family="'Noto Serif SC', serif" fill="#1b1713">119 亿</text>
+                            <text x="74" y="172" font-size="13" font-family="Manrope, sans-serif" fill="#6f655b">预测营收 / 海外仓 / 品牌矩阵</text>
+                            <rect x="74" y="198" width="128" height="14" rx="7" fill="#1b1713"></rect>
+                            <rect x="74" y="224" width="92" height="14" rx="7" fill="#817469"></rect>
+                            <text x="316" y="100" font-size="16" font-family="Manrope, sans-serif" fill="#6f655b">Songmics</text>
+                            <text x="316" y="138" font-size="34" font-family="'Noto Serif SC', serif" fill="#1b1713">832</text>
+                            <text x="316" y="172" font-size="13" font-family="Manrope, sans-serif" fill="#6f655b">专利 / 平台结构 / 数字化工具</text>
+                            <rect x="316" y="198" width="136" height="14" rx="7" fill="#1b1713"></rect>
+                            <rect x="316" y="224" width="104" height="14" rx="7" fill="#817469"></rect>
+                        </svg>
+                    </div>
+                    <div class="visual-stack">
+                        <p class="eyebrow">Case study / Benchmark analysis</p>
+                        <h3 class="card-title">标杆企业分析</h3>
+                        <p>拆解傲基科技与致欧家居的品牌矩阵、平台结构、仓配能力和组织效率，抽取对新业务有用的增长动作。</p>
+                        <div class="chip-row">
+                            <span class="chip">标杆拆解</span>
+                            <span class="chip">增长路径</span>
+                            <span class="chip">组织能力</span>
+                        </div>
+                        <span class="link-inline">查看完整案例 →</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="section-block insight-grid">
+            <article class="insight-card">
+                <p class="eyebrow">How I work</p>
+                <h3 class="card-title">先把问题框清，再决定要不要投入。</h3>
+                <p>我不把“信息很多”误当成“研究很充分”。先建立判断框架，再决定哪些数据值得继续深挖，能显著减少无效分析。</p>
+            </article>
+            <article class="insight-card">
+                <p class="eyebrow">How I judge</p>
+                <h3 class="card-title">把复杂市场翻译成业务能用的语言。</h3>
+                <p>无论是用户反馈、类目数据还是行业趋势，我最终都会把它们转成优先级、进入顺序、价格带或资源配置建议。</p>
+            </article>
+            <article class="insight-card">
+                <p class="eyebrow">How I deliver</p>
+                <h3 class="card-title">让研究结果进入下一步动作，而不是停在报告里。</h3>
+                <p>我关心的不是“报告是否完整”，而是它能不能真正帮助团队做决定、分任务、控风险，并往下推进。</p>
+            </article>
+        </section>
+
+        <section class="section-block">
+            <div class="section-head">
+                <p class="kicker">Report Look</p>
+                <h2 class="section-title">项目页现在同时具备两种表达：交互看板，以及更像真实报告的摘要页。</h2>
+                <p class="lead">我把报告型位图也加入了案例页里，让页面既能展示“数据可视化能力”，也能展示“正式交付物的视觉可信度”。</p>
+            </div>
+            <div class="report-gallery">
+                <figure class="report-figure">
+                    <img src="images/report-visuals/voc-report-board.png" alt="VOC 报告摘要图预览">
+                    <figcaption>VOC 案例的摘要页预览，强调痛点优先级和平台用户差异。</figcaption>
+                </figure>
+                <figure class="report-figure">
+                    <img src="images/report-visuals/eu-bathroom-report-board.png" alt="欧洲卫浴数据看板摘要图预览">
+                    <figcaption>欧洲卫浴项目的看板摘要页预览，强化“国家优先级 + 类目优先级”的报告感。</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <div class="sample-download-card">
+                <div class="sample-download-copy">
+                    <p class="kicker">Free Sample</p>
+                    <h2 class="section-title">下载一份示例报告，直接查看交付物的排版、结构与表达方式。</h2>
+                    <p class="lead">参考咨询公司官网常见的样本报告入口，我在项目集合页加入了可直接下载的 PDF 样本。当前示例文件命名为 <strong>free sample.pdf</strong>，点击即可获取。</p>
+                    <div class="chip-row">
+                        <span class="chip">PDF sample</span>
+                        <span class="chip">Report delivery</span>
+                        <span class="chip">Portfolio asset</span>
+                    </div>
                 </div>
-            </a>
-        </div>
+                <a class="sample-download-action" href="downloads/free%20sample.pdf" download="free sample.pdf" type="application/pdf">
+                    <span class="sample-download-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" role="img" focusable="false">
+                            <path d="M12 4v8.25"></path>
+                            <path d="M8.75 9.75 12 13l3.25-3.25"></path>
+                            <path d="M5 16.25v1.5a1.25 1.25 0 0 0 1.25 1.25h11.5A1.25 1.25 0 0 0 19 17.75v-1.5"></path>
+                        </svg>
+                    </span>
+                    <span class="sample-download-content">
+                        <span class="sample-download-label">Download free sample</span>
+                        <span class="sample-download-meta">PDF · 2.7 MB</span>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <p class="footer">所有案例页已统一到同一套视觉与信息结构中：一致的导航、字体、间距、色系、交互与内容骨架，后续新增项目也可以继续按这套模板稳定扩展。</p>
     </main>
 </body>
 </html>
+
+

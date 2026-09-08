@@ -1,28 +1,152 @@
-# 个人博客操作手册
+# WW.WIKI / Vibecastle
 
-### 创建新文章的 HTML 文件
-/2026内有“example”文件，直接复制粘贴到新文章.html
+WW.WIKI 是一个面向市场分析、消费者洞察、数据分析与项目推进能力展示的个人品牌站。  
+这个版本已经从“静态作品陈列”升级为“可维护的作品集工程”，包含统一视觉系统、项目案例页、真实博客归档，以及可交互的数据可视化组件。
 
-### 上传图片
-将图片放入 /images 文件夹，然后在文章中用 <img src="/images/图片名.jpg"> 引用。
+## 当前版本特点
 
-### 写新文章的实操步骤
+- 全站统一视觉：
+  - 网格背景
+  - 毛玻璃导航栏
+  - 统一圆角、间距、按钮与卡片系统
+  - `Plus Jakarta Sans` + `Noto Serif SC` 字体体系
+- 四大主导航模块：
+  - `/index.html`
+  - `/projects.html`
+  - `/thoughts.html`
+  - `/about.html`
+- 项目案例页支持两层交互：
+  - tab 切换内容面板
+  - 自定义交互看板（matrix / rank）
+- 博客与项目结构分离，适合长期维护
+- 全站 SEO 基础：每页 description / canonical / Open Graph / Twitter 卡片，
+  站点级 robots.txt + sitemap.xml，分享链接自带标题卡与配图
+- 移动端汉堡导航、自定义 404 页
 
-新建文章文件：在你的 GitHub 仓库根目录下，新建一个 .html 文件，名字自定义。比如写一篇关于 Lo-Fi 的随笔，文件可以叫 post-lofi.html。
+## 目录结构
 
-复制粘贴母版：把上面那段长长的《article-template》代码全部复制粘贴进这个新文件里。
+```text
+/index.html                         首页
+/projects.html                      项目与洞察列表
+/thoughts.html                      思考与生活列表
+/about.html                         关于我
+/404.html                           自定义 404 页
+/robots.txt / sitemap.xml           搜索引擎收录配置
+/2026/                              博客文章归档
+/archive/                           项目案例详情页
+/styles/site.css                    全站统一样式
+/scripts/project-visuals.js         全站项目交互与图表脚本
+/scripts/site-nav.js                移动端汉堡菜单（自动注入，无需每页手写）
+/images/og-card.png                 社交分享卡图（1200x630）
+/images/favicon.png                 站点图标
+/templates/blog-post-template.html  新文章模板（已含 SEO 标签骨架）
+/templates/project-case-template.html 新项目模板（已含 SEO 标签骨架）
+```
 
-改字（只改两个地方）：
+## 如何本地预览
 
-改标签名：修改顶部的 <title>你的新文章标题 | WW.WIKI</title>。
+在项目根目录运行一个静态服务即可。Windows 下可用：
 
-改正文：直接定位到中间的 <main id="pjax-container"> 到 </main> 这一段，把这里面的标题、日期、正文 <p> 标签里的文字改成你真正要写的文章内容。
+```bash
+python -m http.server 4174
+```
 
-保存发布：点击 GitHub 的 Commit changes 保存。
+然后打开：
 
-### 如何在列表页链接到这篇文章？
-文件建好后，你只需要在你的 thoughts.html（生活页）或者 projects.html（项目页）的里面，用普通的超链接指向它即可。
-例如，在 thoughts.html 的正文里加上一行：
+```text
+http://127.0.0.1:4174/index.html
+```
 
-<a href="post-lofi.html">点击阅读我的新文章：关于Lo-Fi与数字花园</a>
-只要点击这个链接，我们的后台脚本就会立刻识别，自动把整篇新文章的内容丝滑地呈现在屏幕上，而右下角的悬浮音乐播放器连闪都不会闪一下，完美实现不间断轮播！
+## 如何新增博客文章
+
+1. 复制 `templates/blog-post-template.html`
+2. 放到 `2026/` 目录
+3. 修改以下位置：
+   - `<title>`
+   - `.kicker`
+   - `.article-title`
+   - `.meta-line`
+   - `.rich-text`
+4. 按模板里的占位提示，改好 `description`、`canonical`、`og:url` 等标签
+5. 把新文章地址加入 `sitemap.xml`
+6. 再到 `thoughts.html` 和 `index.html` 增加入口（首页「Latest writing」保持最新 3 篇）
+
+推荐命名：
+
+```text
+/2026/日期+标题.html
+```
+
+## 如何新增项目案例
+
+1. 复制 `templates/project-case-template.html`
+2. 放到 `archive/` 目录
+3. 修改以下内容：
+   - 项目标题与摘要
+   - Hero 区指标卡
+   - `Project Snapshot`
+   - `Interactive Dashboard`
+   - `Interactive View`
+   - 底部 JSON 数据源
+4. 再到 `projects.html` 和 `index.html` 增加入口
+
+推荐命名：
+
+```text
+/archive/project-your-slug.html
+```
+
+## 可视化组件怎么维护
+
+项目页的动态图表逻辑在：
+
+```text
+/scripts/project-visuals.js
+```
+
+当前支持两类：
+
+- `data-chart="matrix"`
+  - 用于国家选择、赛道判断、优先级矩阵
+- `data-chart="rank"`
+  - 用于品类排名、市场规模排序、优先级排序
+
+图表数据不是写死在 JS 里，而是放在页面底部的：
+
+```html
+<script type="application/json" id="your-chart-id">
+```
+
+这样后续新增项目时，不需要改 JS 逻辑，只需要新增 JSON 数据即可。
+
+## 长期维护建议
+
+- 样式只维护 `styles/site.css`，不要在单页内散写 `<style>`
+- 项目交互只维护 `scripts/project-visuals.js`
+- 新项目优先复用模板，不要重新发明一套结构
+- 每次新增页面后，至少检查：
+  - 导航是否一致
+  - 跳转是否正常
+  - 是否继续引用 `/styles/site.css`
+  - 是否继续引用 `/scripts/project-visuals.js`
+- 所有文件必须用 UTF-8（无 BOM）保存。曾发生过整页中文变乱码的事故
+  （原 UTF-8 被按 GBK 误读再存回），从编辑器导出/粘贴大段中文时尤其注意
+- SEO 标签（description / canonical / og）与 `sitemap.xml` 随新页面一起更新，
+  分享到微信、飞书、LinkedIn 时会显示标题卡片和配图
+
+## Git 基本流程
+
+```bash
+git status
+git add .
+git commit -m "Describe your update"
+git push
+```
+
+如果需要新开分支：
+
+```bash
+git checkout -b your-branch-name
+git push -u origin your-branch-name
+```
+

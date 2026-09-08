@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ww5468451.github.io/vibecastle/sitemap.xml
