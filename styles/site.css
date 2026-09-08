@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@500;600;700&display=swap');
-
 :root {
     --bg: #f4efe6;
     --bg-soft: #fbf8f3;
@@ -565,7 +563,7 @@ button {
     margin-top: 30px;
     padding-top: 20px;
     border-top: 1px solid var(--line);
-    color: var(--muted);
+    color: #5f564b;
     font-size: 13px;
 }
 
@@ -1057,5 +1055,71 @@ button {
     .chart-shell {
         min-height: 300px;
         padding: 12px;
+    }
+}
+
+/* ==== 移动端汉堡菜单 ==== */
+.nav-burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.nav-burger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--accent);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+body.nav-open .nav-burger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+body.nav-open .nav-burger span:nth-child(2) {
+    opacity: 0;
+}
+
+body.nav-open .nav-burger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 760px) {
+    .nav-burger {
+        display: inline-flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 12px 20px 18px;
+        background: rgba(247, 243, 235, 0.97);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid var(--line);
+        box-shadow: var(--shadow-soft);
+    }
+
+    body.nav-open .nav-links {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 12px 14px;
+        font-size: 15px;
     }
 }
